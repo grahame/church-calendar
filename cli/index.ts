@@ -1,11 +1,11 @@
 import { calendar as aca_calendar } from "../western/calendars/anglican-church-of-australia.ts";
 
 const main = () => {
-	const year = Number.parseInt(Deno.args[0]) || new Date().getFullYear();
-	const events = aca_calendar(year);
-	for (const event of events) {
-		console.log(event);
-	}
+    const year = Number.parseInt(Deno.args[0]) || new Date().getFullYear();
+    const events = aca_calendar(year);
+    for (const event of events) {
+        console.log(event);
+    }
 };
 
 main();

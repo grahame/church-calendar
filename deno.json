@@ -1,10 +1,8 @@
 {
-	"fmt": {
-		"useTabs": true,
-		"lineWidth": 120,
-		"indentWidth": 4,
-		"semiColons": true,
-		"singleQuote": false,
-		"proseWrap": "preserve"
+	"imports": {
+		"temporal": "npm:@js-temporal/polyfill@0.4.4",
+        "std/": "https://deno.land/std@0.203.0/",
+        "dnt": "https://deno.land/x/dnt@0.38.1/mod.ts"
 	}
+
 }

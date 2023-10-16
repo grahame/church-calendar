@@ -1,14 +1,9 @@
-import { Temporal } from "npm:@js-temporal/polyfill@0.4.4";
+import { Temporal } from "temporal";
 
-export const testDateFunc = (
-	fn: (year: number) => Temporal.PlainDate,
-	year: number,
-	month: number,
-	day: number,
-) => {
-	const res = fn(year);
-	if (!res) {
-		return false;
-	}
-	return res.year === year && res.month === month && res.day === day;
+export const testDateFunc = (fn: (year: number) => Temporal.PlainDate, year: number, month: number, day: number) => {
+    const res = fn(year);
+    if (!res) {
+        return false;
+    }
+    return res.year === year && res.month === month && res.day === day;
 };
