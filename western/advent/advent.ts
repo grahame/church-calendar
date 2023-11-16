@@ -1,4 +1,4 @@
-import { Temporal } from "temporal";
+import { Temporal } from "../../temporal.ts";
 
 export const advent = (year: number): Temporal.PlainDate => {
     // for some nonsense reason JS months index from zero

@@ -1,4 +1,4 @@
-import { assertEquals } from "std/assert/mod.ts";
+import { assertEquals } from "../../testfuncs.ts";
 import { testDateFunc } from "../../testcommon.ts";
 import { ashWednesday } from "./lent.ts";
 

@@ -1,5 +1,5 @@
 import { pentecost } from "./pentecost.ts";
-import { assertEquals } from "std/assert/mod.ts";
+import { assertEquals } from "../../testfuncs.ts";
 import { testDateFunc } from "../../testcommon.ts";
 
 Deno.test("pentecost calculations correct", () => {
