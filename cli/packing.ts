@@ -8,19 +8,23 @@ export const pack_observance = (
     index: PackingIndex,
     observance: Observance,
     festival: Festival,
-    can_fail: boolean,
+    can_fail: boolean
 ) => {
     const dates = observance.dates(ctxt);
     const blockages = [];
     for (const date of dates) {
         if (Temporal.PlainDate.compare(date, ctxt.first_day) == -1) {
             throw new Error(
-                `Date ${date.toString()} is before the start of the liturgical year (${ctxt.first_day.toString()})`,
+                `Date ${date.toString()} for slug ${
+                    festival.slug
+                } is before the start of the liturgical year (${ctxt.first_day.toString()})`
             );
         }
         if (Temporal.PlainDate.compare(date, ctxt.last_day) == 1) {
             throw new Error(
-                `Date ${date.toString()} is after the end of the liturgical year (${ctxt.last_day.toString()})`,
+                `Date ${date.toString()} for slug ${
+                    festival.slug
+                } is after the end of the liturgical year (${ctxt.last_day.toString()})`
             );
         }
         const date_key = date.toString();
@@ -33,7 +37,7 @@ export const pack_observance = (
     }
     if (!can_fail && dates.length > 0) {
         throw new Error(
-            `Could not place ${festival.name} on any of ${dates.join(", ")}, blocked by ${blockages.join(", ")}`,
+            `Could not place ${festival.name} on any of ${dates.join(", ")}, blocked by ${blockages.join(", ")}`
         );
     }
 };
@@ -64,7 +68,7 @@ export const pack_observances = (
     ctxt: LiturgicalYearContext,
     index: PackingIndex,
     ofl: ObservanceFestivalList,
-    can_fail: boolean,
+    can_fail: boolean
 ) => {
     for (const idx in ofl) {
         pack_observance(ctxt, index, ...ofl[idx], can_fail);
