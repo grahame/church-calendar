@@ -1,30 +1,43 @@
-import { Denomination, ObservationLevel, ResolvedCalendar, make_festival_index } from "../../calendar.ts";
+import { Denomination, LiturgicalYearContext, ObservationLevel, ResolvedCalendar } from "../../calendar.ts";
 import { PackingIndex, pack_observances, resolve_observances } from "../../cli/packing.ts";
+import { make_festival_index } from "../../festivalindex.ts";
 import { make_liturgical_year_context } from "../dates/index.ts";
 import Festivals from "../festivals/index.ts";
 
 export const calendar = (year: number): ResolvedCalendar => {
-    const ctxt = make_liturgical_year_context(year);
-    const index: PackingIndex = {};
     const denom = Denomination.ANG_AU;
-
+    const index: PackingIndex = {};
     const festival_index = make_festival_index(Festivals);
 
-    pack_observances(
-        ctxt,
-        index,
-        [
-            ...festival_index[denom][ObservationLevel.PRINCIPAL],
-            ...festival_index[denom][ObservationLevel.NON_DISPLACABLE],
-        ],
-        false
-    );
-    pack_observances(ctxt, index, festival_index[denom][ObservationLevel.FESTIVAL], true);
-    pack_observances(ctxt, index, festival_index[denom][ObservationLevel.LESSER_FESTIVAL], true);
+    const pack_principal_years = (ctxts: LiturgicalYearContext[]) => {
+        for (const ctxt of ctxts) {
+            pack_observances(
+                ctxt,
+                index,
+                [
+                    ...festival_index[denom][ObservationLevel.PRINCIPAL],
+                    ...festival_index[denom][ObservationLevel.NON_DISPLACABLE],
+                ],
+                false
+            );
+        }
+    };
+    const pack_festival_year = (ctxts: LiturgicalYearContext[]) => {
+        for (const ctxt of ctxts) {
+            pack_observances(ctxt, index, festival_index[denom][ObservationLevel.FESTIVAL], true);
+        }
+    };
+    const pack_lesser_festival_year = (ctxts: LiturgicalYearContext[]) => {
+        for (const ctxt of ctxts) {
+            pack_observances(ctxt, index, festival_index[denom][ObservationLevel.LESSER_FESTIVAL], true);
+        }
+    };
 
-    // we also fence off all the weekdays in Holy Week and Easter Week (APBA 452)
-    // as they can't be
+    const ctxts = [make_liturgical_year_context(year - 1), make_liturgical_year_context(year)];
+    pack_principal_years(ctxts);
+    pack_festival_year(ctxts);
+    pack_lesser_festival_year(ctxts);
 
     // linearise the placed dictionary into a list
-    return resolve_observances(ctxt, index);
+    return resolve_observances(index, ctxts[1]);
 };

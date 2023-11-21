@@ -1,10 +1,11 @@
-import { Denomination, Festival, LiturgicalYearContext, ObservationLevel, in_year } from "../../calendar.ts";
+import { Denomination, Festival, LiturgicalYearContext, ObservationLevel, in_liturgical_year } from "../../calendar.ts";
 import { capitalize, nthify } from "../../nth.ts";
 import { Temporal } from "../../temporal.ts";
 import { n_sundays_after, n_sundays_before } from "../sunday.ts";
 
 export const epiphany_date = (ctxt: LiturgicalYearContext) => {
-    return in_year(ctxt, 1, 6);
+    // epiphany is clear of any moving bits of the calendar
+    return in_liturgical_year(ctxt, 1, 6)!;
 };
 
 const sundays_after_epiphany = () => {
@@ -65,7 +66,7 @@ const Festivals: Festival[] = [
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
-                    const epiphany = in_year(ctxt, 1, 6);
+                    const epiphany = epiphany_date(ctxt);
                     return [epiphany, n_sundays_before(epiphany, 1)];
                 },
             },

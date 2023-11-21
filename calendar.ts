@@ -32,6 +32,15 @@ export type Observance = {
     dates: (ctxt: LiturgicalYearContext) => Temporal.PlainDate[];
 };
 
+export type CalendarObservance = {
+    // the denominations that observe the feast in this manner
+    denominations: Denomination[];
+    // the denominational name of the observance
+    name?: string;
+    level: ObservationLevel;
+    dates: (ctxt: LiturgicalYearContext, calendar_year: number) => Temporal.PlainDate[];
+};
+
 // The definition of a festival within the Calendar of the Church
 // A festival might have multiple potential observation dates.
 export type Festival = {
@@ -41,18 +50,8 @@ export type Festival = {
     image_link?: string;
     // e.g. https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Stack%20Overflow
     wikipedia_en_article_title?: string;
-    observances: Observance[];
-};
-
-// The date of observation of a festival within one or more calendars
-export type FestivalInCalendars = Festival & {
-    calendar_slugs: string[];
-    observance_dates: Temporal.PlainDate[];
-};
-
-export type FestivalObservance = Festival & {
-    calendar_slug: string;
-    date: Temporal.PlainDate;
+    observances?: Observance[];
+    calendar_observances?: CalendarObservance[];
 };
 
 export type ResolvedObservance = {
@@ -63,39 +62,50 @@ export type ResolvedObservance = {
     image_link?: string;
 };
 
-export const in_year = (ctxt: LiturgicalYearContext, month: number, day: number) => {
-    const this_year = new Temporal.PlainDate(ctxt.year, month, day);
-    if (Temporal.PlainDate.compare(this_year, ctxt.last_day) == 1) {
-        return new Temporal.PlainDate(ctxt.year - 1, month, day);
+export const date_within_liturgical_year = (ctxt: LiturgicalYearContext, date: Temporal.PlainDate) => {
+    if (Temporal.PlainDate.compare(date, ctxt.first_day) == -1) {
+        return false;
     }
-    return this_year;
+    if (Temporal.PlainDate.compare(date, ctxt.last_day) == 1) {
+        return false;
+    }
+    return true;
+};
+
+export const in_calendar_year = (year: number, month: number, day: number) => {
+    // return a date within the given calendar year, or none if this is not possible
+    return new Temporal.PlainDate(year, month, day);
+};
+
+export const in_liturgical_year = (ctxt: LiturgicalYearContext, month: number, day: number) => {
+    // return a date within the given liturgical year, or none if this is not possible
+    const possible = [new Temporal.PlainDate(ctxt.year, month, day), new Temporal.PlainDate(ctxt.year - 1, month, day)];
+    for (const dt of possible) {
+        if (date_within_liturgical_year(ctxt, dt)) {
+            return dt;
+        }
+    }
 };
 
 export type ResolvedCalendar = [Temporal.PlainDate, ResolvedObservance][];
 
-export type ObservanceFestivalList = [Observance, Festival][];
+export type CalendarObservanceFestival = {
+    type: "calendar";
+    observance: CalendarObservance;
+    festival: Festival;
+};
+
+export type LiturgicalObservanceFestival = {
+    type: "liturgical";
+    observance: Observance;
+    festival: Festival;
+};
+
+export type EitherObservanceFestival = CalendarObservanceFestival | LiturgicalObservanceFestival;
+export type ObservanceFestivalList = EitherObservanceFestival[];
 
 export type FestivalIndex = {
     [key: string]: {
         [key: string]: ObservanceFestivalList;
     };
-};
-
-export const make_festival_index = (festivals: Festival[]): FestivalIndex => {
-    // index by denomination, then by level, then by order of appearance in the list
-    const festival_level_index: FestivalIndex = {};
-    for (const festival of festivals) {
-        for (const observance of festival.observances) {
-            for (const denomination of observance.denominations) {
-                if (!festival_level_index[denomination]) {
-                    festival_level_index[denomination] = {};
-                }
-                if (!festival_level_index[denomination][observance.level]) {
-                    festival_level_index[denomination][observance.level] = [];
-                }
-                festival_level_index[denomination][observance.level].push([observance, festival]);
-            }
-        }
-    }
-    return festival_level_index;
 };

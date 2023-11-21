@@ -1,10 +1,11 @@
-import { Denomination, Festival, LiturgicalYearContext, ObservationLevel, in_year } from "../../calendar.ts";
+import { Denomination, Festival, LiturgicalYearContext, ObservationLevel, in_liturgical_year } from "../../calendar.ts";
 import { Temporal } from "../../temporal.ts";
 import { n_sundays_after } from "../sunday.ts";
 import { epiphany_date } from "./epiphany.ts";
 
 const christmas_date = (ctxt: LiturgicalYearContext) => {
-    return in_year(ctxt, 12, 25);
+    // Christmas Day is always in the liturgical year
+    return in_liturgical_year(ctxt, 12, 25)!;
 };
 
 const Festivals: Festival[] = [

@@ -1,4 +1,4 @@
-import { in_year } from "../../calendar.ts";
+import { in_calendar_year } from "../../calendar.ts";
 import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { n_sundays_after } from "../sunday.ts";
 
@@ -7,12 +7,12 @@ const Festivals: Festival[] = [
         slug: "all-saints-day",
         name: "All Saints' Day",
         wikipedia_en_article_title: "All Saints' Day",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.PRINCIPAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    const all_saints = in_year(ctxt, 11, 1);
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    const all_saints = in_calendar_year(year, 11, 1);
                     return [all_saints, n_sundays_after(all_saints, 1)];
                 },
             },
@@ -22,12 +22,12 @@ const Festivals: Festival[] = [
         slug: "the-naming-and-circumcision-of-jesus",
         name: "The Naming and Circumcision of Jesus",
         wikipedia_en_article_title: "Circumcision of Jesus",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 1, 1)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 1, 1)];
                 },
             },
         ],
@@ -36,12 +36,12 @@ const Festivals: Festival[] = [
         slug: "the-presentation-of-christ-in-the-temple",
         name: "The Presentation of Christ in the Temple",
         wikipedia_en_article_title: "Presentation of Jesus at the Temple",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 2, 2)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 2, 2)];
                 },
             },
         ],
@@ -50,12 +50,12 @@ const Festivals: Festival[] = [
         slug: "matthias-the-apostle",
         name: "Matthias the Apostle",
         wikipedia_en_article_title: "Saint Matthias",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 2, 24), in_year(ctxt, 5, 14)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 2, 24), in_calendar_year(year, 5, 14)];
                 },
             },
         ],
@@ -64,12 +64,12 @@ const Festivals: Festival[] = [
         slug: "saint-joseph",
         name: "Saint Joseph",
         wikipedia_en_article_title: "Saint Joseph",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 3, 19)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 3, 19)];
                 },
             },
         ],
@@ -78,13 +78,13 @@ const Festivals: Festival[] = [
         slug: "the-annunciation-of-our-lord-to-the-blessed-virgin-mary",
         name: "The Annunciation of Our Lord to the Blessed Virgin Mary",
         wikipedia_en_article_title: "Annunciation",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 name: "The Annunciation to the Blessed Virgin Mary",
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 3, 25)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 3, 25)];
                 },
             },
         ],
@@ -93,12 +93,12 @@ const Festivals: Festival[] = [
         slug: "mark-the-evangelist",
         name: "Mark (evangelist and martyr)",
         wikipedia_en_article_title: "Mark the Evangelist",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 4, 25), in_year(ctxt, 4, 26)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 4, 25), in_calendar_year(year, 4, 26)];
                 },
             },
         ],
@@ -107,12 +107,12 @@ const Festivals: Festival[] = [
         slug: "philip-and-james-apostles",
         name: "Philip and James (apostles and martyrs)",
         wikipedia_en_article_title: "Philip the Apostle",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 5, 1), in_year(ctxt, 5, 3)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 5, 1), in_calendar_year(year, 5, 3)];
                 },
             },
         ],
@@ -121,12 +121,12 @@ const Festivals: Festival[] = [
         slug: "barnabas-the-apostle",
         name: "Barnabas (apostle and martyr)",
         wikipedia_en_article_title: "Barnabas",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 6, 11)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 6, 11)];
                 },
             },
         ],
@@ -135,12 +135,12 @@ const Festivals: Festival[] = [
         slug: "the-birth-of-john-the-baptist",
         name: "The Birth of John the Baptist",
         wikipedia_en_article_title: "Nativity of Saint John the Baptist",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 6, 24)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 6, 24)];
                 },
             },
         ],
@@ -149,12 +149,12 @@ const Festivals: Festival[] = [
         slug: "peter-and-paul-apostles",
         name: "Peter and Paul (apostles and martyrs)",
         wikipedia_en_article_title: "Feast_of_Saints_Peter_and_Paul",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 6, 29)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 6, 29)];
                 },
             },
         ],
@@ -163,12 +163,12 @@ const Festivals: Festival[] = [
         slug: "mary-magdalene",
         name: "Mary Magdalene",
         wikipedia_en_article_title: "Mary Magdalene",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 7, 22)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 7, 22)];
                 },
             },
         ],
@@ -177,12 +177,12 @@ const Festivals: Festival[] = [
         slug: "james-apostle",
         name: "James (apostle and martyr)",
         wikipedia_en_article_title: "James, son of Zebedee",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 7, 25)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 7, 25)];
                 },
             },
         ],
@@ -191,12 +191,12 @@ const Festivals: Festival[] = [
         slug: "transfiguration",
         name: "The Transfiguration of our Lord",
         wikipedia_en_article_title: "Transfiguration_of_Jesus",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 8, 6)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 8, 6)];
                 },
             },
         ],
@@ -205,12 +205,12 @@ const Festivals: Festival[] = [
         slug: "mary-mother-of-our-lord",
         name: "Mary, Mother of our Lord",
         wikipedia_en_article_title: "Mary, mother of Jesus",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 8, 15)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 8, 15)];
                 },
             },
         ],
@@ -219,12 +219,12 @@ const Festivals: Festival[] = [
         slug: "bartholomew-the-apostle",
         name: "Bartholomew (apostle and martyr)",
         wikipedia_en_article_title: "Bartholomew the Apostle",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 8, 24)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 8, 24)];
                 },
             },
         ],
@@ -233,12 +233,12 @@ const Festivals: Festival[] = [
         slug: "matthew-apostle-and-evangelist",
         name: "Matthew (apostle, evangelist and martyr)",
         wikipedia_en_article_title: "Matthew the Apostle",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 9, 21)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 9, 21)];
                 },
             },
         ],
@@ -247,12 +247,12 @@ const Festivals: Festival[] = [
         slug: "michael-and-all-angels",
         name: "Michael and All Angels",
         wikipedia_en_article_title: "Michaelmas",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 9, 29)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 9, 29)];
                 },
             },
         ],
@@ -261,12 +261,12 @@ const Festivals: Festival[] = [
         slug: "luke-the-evangelist",
         name: "Luke (evangelist and martyr)",
         wikipedia_en_article_title: "Luke the Evangelist",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 10, 18)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 10, 18)];
                 },
             },
         ],
@@ -275,12 +275,12 @@ const Festivals: Festival[] = [
         slug: "simon-and-jude-apostles",
         name: "Simon and Jude (apostles and martyrs)",
         wikipedia_en_article_title: "Saints Simon and Jude",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 10, 28)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 10, 28)];
                 },
             },
         ],
@@ -289,12 +289,12 @@ const Festivals: Festival[] = [
         slug: "andrew-the-apostle",
         name: "Andrew (apostle and martyr)",
         wikipedia_en_article_title: "Andrew the Apostle",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 11, 30)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 11, 30)];
                 },
             },
         ],
@@ -303,12 +303,12 @@ const Festivals: Festival[] = [
         slug: "thomas-the-apostle",
         name: "Thomas (apostle and martyr)",
         wikipedia_en_article_title: "Thomas the Apostle",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 12, 21), in_year(ctxt, 8, 3)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 12, 21), in_calendar_year(year, 8, 3)];
                 },
             },
         ],
@@ -317,12 +317,12 @@ const Festivals: Festival[] = [
         slug: "stephen-the-martyr",
         name: "Stephen (deacon and martyr)",
         wikipedia_en_article_title: "Saint Stephen",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 12, 26), in_year(ctxt, 8, 3)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 12, 26), in_calendar_year(year, 8, 3)];
                 },
             },
         ],
@@ -331,12 +331,12 @@ const Festivals: Festival[] = [
         slug: "john-apostle-and-evangelist",
         name: "John (apostle and evangelist)",
         wikipedia_en_article_title: "John the Apostle",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 12, 27), in_year(ctxt, 5, 6)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 12, 27), in_calendar_year(year, 5, 6)];
                 },
             },
         ],
@@ -345,12 +345,12 @@ const Festivals: Festival[] = [
         slug: "holy-innocents",
         name: "Holy Innocents",
         wikipedia_en_article_title: "Massacre of the Innocents",
-        observances: [
+        calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.FESTIVAL,
-                dates: (ctxt: LiturgicalYearContext) => {
-                    return [in_year(ctxt, 12, 28)];
+                dates: (_ctxt: LiturgicalYearContext, year: number) => {
+                    return [in_calendar_year(year, 12, 28)];
                 },
             },
         ],
