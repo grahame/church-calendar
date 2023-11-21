@@ -1,15 +1,24 @@
-import { advent } from "../advent/advent.ts";
+import { Festival, LiturgicalYearContext } from "../../calendar.ts";
+import { advent } from "../dates/advent/advent.ts";
+import { easter } from "../dates/easter/easter.ts";
+import { pentecost } from "../dates/pentecost/pentecost.ts";
+import { lent } from "../dates/lent/lent.ts";
 
 export const calendar = (year: number) => {
     const events: string[] = [];
 
-    // we start on the prior year's First Sunday of Advent
-    // ... and we end on the day prior to the next year's First Sunday of Advent
-    const start = advent(year - 1);
-    const end = advent(year).add({ days: -1 });
+    const context: LiturgicalYearContext = {
+        advent: advent(year - 1),
+        easter: easter(year),
+        pentecost: pentecost(year),
+        lent: lent(year),
+        first_day: advent(year - 1),
+        last_day: advent(year).add({ days: -1 }),
+    };
 
-    console.log(start.toString());
-    console.log(end.toString());
+    const calendar: { [key: string]: Festival } = {};
+
+    // principal festivals go into our year first
 
     return events;
 };

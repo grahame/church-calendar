@@ -1,4 +1,4 @@
-import { Temporal } from "../../temporal.ts";
+import { Temporal } from "../../../temporal.ts";
 import { easter } from "../easter/easter.ts";
 
 export const pentecost = (year: number) => {

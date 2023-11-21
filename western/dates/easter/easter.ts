@@ -1,4 +1,4 @@
-import { Temporal } from "../../temporal.ts";
+import { Temporal } from "../../../temporal.ts";
 
 const rem_euclid = (a: number, b: number): number => {
     const r = a % b;

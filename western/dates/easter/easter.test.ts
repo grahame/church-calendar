@@ -1,6 +1,6 @@
 import { easter } from "./easter.ts";
-import { assertEquals } from "../../testfuncs.ts";
-import { testDateFunc } from "../../testcommon.ts";
+import { assertEquals } from "../../../testfuncs.ts";
+import { testDateFunc } from "../../../testcommon.ts";
 
 Deno.test("easter calculations correct", () => {
     assertEquals(testDateFunc(easter, 1583, 4, 10), true);

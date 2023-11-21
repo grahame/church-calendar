@@ -1,5 +1,5 @@
-import { assertEquals } from "../../testfuncs.ts";
-import { testDateFunc } from "../../testcommon.ts";
+import { assertEquals } from "../../../testfuncs.ts";
+import { testDateFunc } from "../../../testcommon.ts";
 import { ashWednesday } from "./lent.ts";
 
 Deno.test("lent algorithm correct", () => {
