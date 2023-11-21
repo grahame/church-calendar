@@ -55,4 +55,12 @@ export type FestivalObservance = Festival & {
     date: Temporal.PlainDate;
 };
 
-export type ResolvedCalendar = [Temporal.PlainDate, Observance, Festival][];
+export type ResolvedObservance = {
+    level: ObservationLevel;
+    slug: string;
+    name: string;
+    description?: string;
+    image_link?: string;
+};
+
+export type ResolvedCalendar = [Temporal.PlainDate, ResolvedObservance][];

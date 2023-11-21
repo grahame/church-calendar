@@ -83,7 +83,16 @@ export const calendar = (year: number): ResolvedCalendar => {
             continue;
         }
         const [observance, festival] = date_observance[dt.toString()];
-        events.push([dt, observance, festival]);
+        events.push([
+            dt,
+            {
+                level: observance.level,
+                slug: festival.slug,
+                name: observance.name || festival.name,
+                description: festival.description,
+                image_link: festival.image_link,
+            },
+        ]);
     }
 
     return events;
