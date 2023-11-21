@@ -12,7 +12,7 @@ const sundays_after_pentecost = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
-                    level: ObservationLevel.NON_DISPLACABLE,
+                    level: ObservationLevel.LESSER_FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const dt = ctxt.pentecost.add({ days: 7 * sunday_after });
                         // the last Sunday is a special-case
@@ -25,13 +25,13 @@ const sundays_after_pentecost = () => {
             ],
         });
         sundays.push({
-            slug: "christ-the-king",
+            slug: `christ-the-king-${sunday_after}`,
             name: "Christ the King",
             wikipedia_en_article_title: "Christ the King",
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
-                    level: ObservationLevel.NON_DISPLACABLE,
+                    level: ObservationLevel.LESSER_FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const dt = ctxt.pentecost.add({ days: 7 * sunday_after });
                         // we must be the last Sunday in ordinary time

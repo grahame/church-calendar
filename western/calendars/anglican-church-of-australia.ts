@@ -10,7 +10,6 @@ export const calendar = (year: number): ResolvedCalendar => {
 
     const festival_index = make_festival_index(Festivals);
 
-    // principal festivals go into our year first
     pack_observances(
         ctxt,
         index,
@@ -18,11 +17,10 @@ export const calendar = (year: number): ResolvedCalendar => {
             ...festival_index[denom][ObservationLevel.PRINCIPAL],
             ...festival_index[denom][ObservationLevel.NON_DISPLACABLE],
         ],
-        false,
+        false
     );
-
-    // festivals go in next
     pack_observances(ctxt, index, festival_index[denom][ObservationLevel.FESTIVAL], true);
+    pack_observances(ctxt, index, festival_index[denom][ObservationLevel.LESSER_FESTIVAL], true);
 
     // we also fence off all the weekdays in Holy Week and Easter Week (APBA 452)
     // as they can't be
