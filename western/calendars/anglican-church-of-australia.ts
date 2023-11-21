@@ -18,7 +18,7 @@ export const calendar = (year: number): ResolvedCalendar => {
             ...festival_index[denom][ObservationLevel.PRINCIPAL],
             ...festival_index[denom][ObservationLevel.NON_DISPLACABLE],
         ],
-        false
+        false,
     );
 
     // festivals go in next

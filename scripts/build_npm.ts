@@ -1,7 +1,6 @@
 // ex. scripts/build_npm.ts
 import { build, emptyDir } from "dnt";
 
-
 await emptyDir("./npm");
 
 await build({

@@ -1,5 +1,4 @@
-import { Denomination, Festival, LiturgicalYearContext, ObservationLevel, in_year } from "../../calendar.ts";
-import { Temporal } from "../../temporal.ts";
+import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { advent } from "../dates/advent/advent.ts";
 
 const Festivals: Festival[] = [
