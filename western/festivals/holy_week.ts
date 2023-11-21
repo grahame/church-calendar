@@ -1,4 +1,5 @@
 import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
+import { n_sundays_before } from "../sunday.ts";
 
 const Festivals: Festival[] = [
     {
@@ -11,7 +12,7 @@ const Festivals: Festival[] = [
                 level: ObservationLevel.NON_DISPLACABLE,
                 name: "Sunday in Holy Week (Palm Sunday)",
                 dates: (ctxt: LiturgicalYearContext) => {
-                    return [ctxt.easter.add({ days: -7 })];
+                    return [n_sundays_before(ctxt.easter, 1)];
                 },
             },
         ],

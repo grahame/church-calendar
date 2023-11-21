@@ -11,6 +11,7 @@ export const pack_observance = (
     can_fail: boolean
 ) => {
     const dates = observance.dates(ctxt);
+    const blockages = [];
     for (const date of dates) {
         if (Temporal.PlainDate.compare(date, ctxt.first_day) == -1) {
             throw new Error(
@@ -26,10 +27,14 @@ export const pack_observance = (
         if (!index[date_key]) {
             index[date_key] = [observance, festival];
             return;
+        } else {
+            blockages.push(index[date_key][1].slug);
         }
     }
     if (!can_fail && dates.length > 0) {
-        throw new Error(`Could not place ${festival.name} on any of ${dates.join(", ")}`);
+        throw new Error(
+            `Could not place ${festival.name} on any of ${dates.join(", ")}, blocked by ${blockages.join(", ")}`
+        );
     }
 };
 
