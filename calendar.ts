@@ -1,31 +1,36 @@
 import { Temporal } from "./temporal.ts";
 
-enum Denomination {
+export enum Denomination {
     ANG_AU = "anglican-church-of-australia",
 }
 
-enum ObservationLevel {
+export enum ObservationLevel {
+    // APBA observation levels
     PRINCIPAL = "principal-festival",
+    // APBA doesn't want to call these Principal Holy Days, but they effectively
+    // are in that they can't be displaced and therefore have the highest priority
+    NON_DISPLACABLE = "non-displacable-festival",
     FESTIVAL = "festival",
     LESSER_FESTIVAL = "lesser-festival",
 }
 
 export type DenominationObservance = {
+    name?: string; // a denomination may have its own name for a festival
     level: ObservationLevel;
 };
 
 export type LiturgicalYearContext = {
+    year: number;
     first_day: Temporal.PlainDate;
     last_day: Temporal.PlainDate;
     advent: Temporal.PlainDate;
     easter: Temporal.PlainDate;
     pentecost: Temporal.PlainDate;
-    lent: Temporal.PlainDate;
 };
 
 export type Observance = {
     denominations: { [denomination in Denomination]: DenominationObservance };
-    observation_dates: Temporal.PlainDate[] | ((year: number) => Temporal.PlainDate[]);
+    observation_dates: (ctxt: LiturgicalYearContext) => Temporal.PlainDate[];
 };
 
 // The definition of a festival within the Calendar of the Church
