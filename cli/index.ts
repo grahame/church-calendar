@@ -2,7 +2,10 @@ import { calendar as aca_calendar } from "../western/calendars/anglican-church-o
 
 const main = () => {
     const year = Number.parseInt(Deno.args[0]) || new Date().getFullYear();
-    const placed_events = aca_calendar(year);
+    const [ctxt, placed_events] = aca_calendar(year);
+    console.log(
+        `Calendar for liturgical year beginning ${ctxt.first_day.toString()}, ending ${ctxt.last_day.toString()}:`
+    );
     for (const [dt, obvs] of placed_events) {
         console.log(`${dt.toString()}: ${obvs.name}`);
     }

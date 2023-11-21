@@ -4,7 +4,7 @@ import { make_festival_index } from "../../festivalindex.ts";
 import { make_liturgical_year_context } from "../dates/index.ts";
 import Festivals from "../festivals/index.ts";
 
-export const calendar = (year: number): ResolvedCalendar => {
+export const calendar = (year: number): [LiturgicalYearContext, ResolvedCalendar] => {
     const denom = Denomination.ANG_AU;
     const index: PackingIndex = {};
     const festival_index = make_festival_index(Festivals);
@@ -50,5 +50,6 @@ export const calendar = (year: number): ResolvedCalendar => {
     pack_lesser_festival_year(ctxts);
 
     // linearise the placed dictionary into a list
-    return resolve_observances(index, ctxts[1]);
+    const ctxt = ctxts[1];
+    return [ctxt, resolve_observances(index, ctxt)];
 };
