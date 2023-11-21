@@ -15,10 +15,33 @@ const sundays_after_pentecost = () => {
                     level: ObservationLevel.NON_DISPLACABLE,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const dt = ctxt.pentecost.add({ days: 7 * sunday_after });
-                        if (Temporal.PlainDate.compare(dt, ctxt.last_day) === 1) {
+                        // the last Sunday is a special-case
+                        if (Temporal.PlainDate.compare(dt, ctxt.last_day.add({ days: -7 })) == 1) {
                             return [];
                         }
                         return [dt];
+                    },
+                },
+            ],
+        });
+        sundays.push({
+            slug: "christ-the-king",
+            name: "Christ the King",
+            wikipedia_en_article_title: "Christ the King",
+            observances: [
+                {
+                    denominations: [Denomination.ANG_AU],
+                    level: ObservationLevel.NON_DISPLACABLE,
+                    dates: (ctxt: LiturgicalYearContext) => {
+                        const dt = ctxt.pentecost.add({ days: 7 * sunday_after });
+                        // we must be the last Sunday in ordinary time
+                        if (
+                            Temporal.PlainDate.compare(dt, ctxt.last_day.add({ days: -7 })) == 1 &&
+                            Temporal.PlainDate.compare(dt, ctxt.last_day) != 1
+                        ) {
+                            return [dt];
+                        }
+                        return [];
                     },
                 },
             ],

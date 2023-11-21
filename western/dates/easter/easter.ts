@@ -13,7 +13,7 @@ export const easter = (year: number): Temporal.PlainDate => {
     const moon_correction = f((8 * century + 5) / 25) - 5;
     const sunday = f((5 * year) / 4) - dropped_leap_years - 10;
     let epact = rem_euclid(11 * golden_number + 20 + moon_correction - dropped_leap_years, 30);
-    if ((epact === 25 && golden_number > 11) || epact === 24) {
+    if ((epact == 25 && golden_number > 11) || epact == 24) {
         epact += 1;
     }
     let calendar_moon = 44 - epact;

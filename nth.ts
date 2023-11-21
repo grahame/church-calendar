@@ -31,7 +31,7 @@ export const nthify = (n: number): string => {
     if (n < 20) {
         return special[n];
     }
-    if (n % 10 === 0) {
+    if (n % 10 == 0) {
         return deca[Math.floor(n / 10) - 2] + "ieth";
     }
     return deca[Math.floor(n / 10) - 2] + "y-" + special[n % 10];
