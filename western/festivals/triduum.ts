@@ -7,14 +7,11 @@ const Festivals: Festival[] = [
         slug: "maundy-thursday",
         name: "Maundy Thursday",
         wikipedia_en_article_title: "Maundy Thursday",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        level: ObservationLevel.PRINCIPAL,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.PRINCIPAL,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -3 })];
                 },
             },
@@ -24,14 +21,11 @@ const Festivals: Festival[] = [
         slug: "good-friday",
         name: "Good Friday",
         wikipedia_en_article_title: "Good Friday",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        level: ObservationLevel.PRINCIPAL,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.PRINCIPAL,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -2 })];
                 },
             },
@@ -41,15 +35,11 @@ const Festivals: Festival[] = [
         slug: "holy-saturday",
         name: "Holy Saturday",
         wikipedia_en_article_title: "Holy Saturday",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        name: "Holy Saturday",
-                        level: ObservationLevel.NON_DISPLACABLE,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.NON_DISPLACABLE,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -1 })];
                 },
             },

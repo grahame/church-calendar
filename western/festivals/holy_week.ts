@@ -5,15 +5,12 @@ const Festivals: Festival[] = [
         slug: "palm-sunday",
         name: "Palm Sunday",
         wikipedia_en_article_title: "Palm Sunday",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        name: "Sunday in Holy Week (Palm Sunday)",
-                        level: ObservationLevel.NON_DISPLACABLE,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.NON_DISPLACABLE,
+                name: "Sunday in Holy Week (Palm Sunday)",
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -7 })];
                 },
             },
@@ -23,15 +20,12 @@ const Festivals: Festival[] = [
         slug: "holy-monday",
         name: "Holy Monday",
         wikipedia_en_article_title: "Holy Monday",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        name: "Monday in Holy Week",
-                        level: ObservationLevel.NON_DISPLACABLE,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.NON_DISPLACABLE,
+                name: "Monday in Holy Week",
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -6 })];
                 },
             },
@@ -41,15 +35,12 @@ const Festivals: Festival[] = [
         slug: "holy-tuesday",
         name: "Holy Tuesday",
         wikipedia_en_article_title: "Holy Tuesday",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        name: "Tuesday in Holy Week",
-                        level: ObservationLevel.NON_DISPLACABLE,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                name: "Tuesday in Holy Week",
+                level: ObservationLevel.NON_DISPLACABLE,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -5 })];
                 },
             },
@@ -59,15 +50,12 @@ const Festivals: Festival[] = [
         slug: "holy-wednesday",
         name: "Holy Wednesday",
         wikipedia_en_article_title: "Holy Wednesday",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        name: "Wednesday in Holy Week",
-                        level: ObservationLevel.NON_DISPLACABLE,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                name: "Wednesday in Holy Week",
+                level: ObservationLevel.NON_DISPLACABLE,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -4 })];
                 },
             },

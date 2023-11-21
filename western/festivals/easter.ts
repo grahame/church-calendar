@@ -7,14 +7,11 @@ const Festivals: Festival[] = [
         slug: "easter-day",
         name: "Easter Day",
         wikipedia_en_article_title: "Easter",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        level: ObservationLevel.PRINCIPAL,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.PRINCIPAL,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter];
                 },
             },
@@ -24,14 +21,11 @@ const Festivals: Festival[] = [
         slug: "ascension-day",
         name: "Ascension Day",
         wikipedia_en_article_title: "Feast of the Ascension",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        level: ObservationLevel.PRINCIPAL,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.PRINCIPAL,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: 39 })];
                 },
             },

@@ -5,14 +5,11 @@ const Festivals: Festival[] = [
         slug: "pentecost",
         name: "Pentecost",
         wikipedia_en_article_title: "Pentecost",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        level: ObservationLevel.PRINCIPAL,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.NON_DISPLACABLE,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.pentecost];
                 },
             },
@@ -22,14 +19,11 @@ const Festivals: Festival[] = [
         slug: "trinity-sunday",
         name: "Trinity Sunday",
         wikipedia_en_article_title: "Trinity Sunday",
-        observations: [
+        observances: [
             {
-                denominations: {
-                    [Denomination.ANG_AU]: {
-                        level: ObservationLevel.PRINCIPAL,
-                    },
-                },
-                observation_dates: (ctxt: LiturgicalYearContext) => {
+                denominations: [Denomination.ANG_AU],
+                level: ObservationLevel.NON_DISPLACABLE,
+                dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.pentecost.add({ days: 7 })];
                 },
             },

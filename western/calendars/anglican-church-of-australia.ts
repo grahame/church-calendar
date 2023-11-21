@@ -1,9 +1,29 @@
-import { RealFileSystemHost } from "https://deno.land/x/ts_morph@18.0.0/common/ts_morph_common.js";
-import { Festival, LiturgicalYearContext } from "../../calendar.ts";
+import { Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { advent } from "../dates/advent/advent.ts";
 import { easter } from "../dates/easter/easter.ts";
 import { pentecost } from "../dates/pentecost/pentecost.ts";
 import Festivals from "../festivals/index.ts";
+
+const make_festival_index = (festivals: Festival[]) => {
+    // index by denomination, then by level, then by order of appearance in the list
+    const index: { [key: string]: { [key: string]: Festival[] } } = {};
+    for (const festival of festivals) {
+        for (const observation of festival.observations) {
+            for (const denomination in observation.denominations) {
+                if (!index[denomination]) {
+                    index[denomination] = {};
+                }
+            }
+            for (const observation of festival.observations[denomination]) {
+                if (!index[denomination][observation.level]) {
+                    index[denomination][observation.level] = [];
+                }
+                index[denomination][observation.level].push(festival);
+            }
+        }
+    }
+    return index;
+};
 
 export const calendar = (year: number) => {
     const events: string[] = [];
