@@ -63,4 +63,39 @@ export type ResolvedObservance = {
     image_link?: string;
 };
 
+export const in_year = (ctxt: LiturgicalYearContext, month: number, day: number) => {
+    const this_year = new Temporal.PlainDate(ctxt.year, month, day);
+    if (Temporal.PlainDate.compare(this_year, ctxt.last_day) == 1) {
+        return new Temporal.PlainDate(ctxt.year - 1, month, day);
+    }
+    return this_year;
+};
+
 export type ResolvedCalendar = [Temporal.PlainDate, ResolvedObservance][];
+
+export type ObservanceFestivalList = [Observance, Festival][];
+
+export type FestivalIndex = {
+    [key: string]: {
+        [key: string]: ObservanceFestivalList;
+    };
+};
+
+export const make_festival_index = (festivals: Festival[]): FestivalIndex => {
+    // index by denomination, then by level, then by order of appearance in the list
+    const festival_level_index: FestivalIndex = {};
+    for (const festival of festivals) {
+        for (const observance of festival.observances) {
+            for (const denomination of observance.denominations) {
+                if (!festival_level_index[denomination]) {
+                    festival_level_index[denomination] = {};
+                }
+                if (!festival_level_index[denomination][observance.level]) {
+                    festival_level_index[denomination][observance.level] = [];
+                }
+                festival_level_index[denomination][observance.level].push([observance, festival]);
+            }
+        }
+    }
+    return festival_level_index;
+};

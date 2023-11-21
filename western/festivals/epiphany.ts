@@ -1,6 +1,10 @@
-import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
+import { Denomination, Festival, LiturgicalYearContext, ObservationLevel, in_year } from "../../calendar.ts";
 import { Temporal } from "../../temporal.ts";
 import { n_sundays_after, n_sundays_before } from "../sunday.ts";
+
+export const epiphany_date = (ctxt: LiturgicalYearContext) => {
+    return in_year(ctxt, 1, 6);
+};
 
 const Festivals: Festival[] = [
     {
@@ -12,7 +16,7 @@ const Festivals: Festival[] = [
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
-                    const epiphany = new Temporal.PlainDate(ctxt.year, 1, 6);
+                    const epiphany = in_year(ctxt, 1, 6);
                     return [epiphany, n_sundays_before(epiphany, 1)];
                 },
             },
