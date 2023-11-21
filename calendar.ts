@@ -54,3 +54,5 @@ export type FestivalObservance = Festival & {
     calendar_slug: string;
     date: Temporal.PlainDate;
 };
+
+export type ResolvedCalendar = [Temporal.PlainDate, Observance, Festival][];
