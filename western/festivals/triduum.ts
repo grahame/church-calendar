@@ -37,6 +37,7 @@ const Festivals: Festival[] = [
         wikipedia_en_article_title: "Holy Saturday",
         observances: [
             {
+                name: "Saturday in Holy Week",
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
