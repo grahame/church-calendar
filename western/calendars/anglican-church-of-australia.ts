@@ -41,6 +41,9 @@ export const calendar = (year: number): ResolvedCalendar => {
     // liturgical year. This could possibly cascade back even further when the optional
     // placement of liturgical dates is taken into account, but we can probably ignore
     // that for now.
+    //
+    // An example of the problem occurs in 2022-2023; the Feast of Saint Andrew is observed
+    // twice within the liturgical year (2022-11-27 -> 2023-12-03)
     const ctxts = [make_liturgical_year_context(year - 1), make_liturgical_year_context(year)];
     pack_principal_years(ctxts);
     pack_festival_year(ctxts);
