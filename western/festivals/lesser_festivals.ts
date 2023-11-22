@@ -249,6 +249,133 @@ const Festivals: Festival[] = [
         month: 3,
         day: 29,
     }),
+    quick_anglican_lesser({
+        name: "Richard of Chichester, bishop",
+        wikipedia_article_titles: ["Richard_of_Chichester"],
+        month: 4,
+        day: 3,
+    }),
+    quick_anglican_lesser({
+        name: "Frederic Barker, bishop of Sydney and pioneer of theological education and the General Synod",
+        wikipedia_article_titles: ["Frederic_Barker"],
+        month: 4,
+        day: 4,
+    }),
+    quick_anglican_lesser({
+        name: "Georgiana Molloy, pioneer church leader and botanist from Western Australia",
+        wikipedia_article_titles: ["Georgiana_Molloy"],
+        month: 4,
+        day: 8,
+    }),
+    quick_anglican_lesser({
+        name: "William Law, priest and teacher",
+        wikipedia_article_titles: ["William_Law"],
+        month: 4,
+        day: 9,
+    }),
+    quick_anglican_lesser({
+        name: "Dietrich Bonhoeffer, pastor and martyr",
+        wikipedia_article_titles: ["Dietrich_Bonhoeffer"],
+        month: 4,
+        day: 9,
+    }),
+    quick_anglican_lesser({
+        name: "George Augustus Selwyn, first missionary bishop of New Zealand",
+        wikipedia_article_titles: ["George_Selwyn_(bishop_of_Lichfield)"],
+        month: 4,
+        day: 11,
+    }),
+    quick_anglican_lesser({
+        name: "Anselm, archbishop of Canterbury, teacher",
+        wikipedia_article_titles: ["Anselm_of_Canterbury"],
+        month: 4,
+        day: 21,
+    }),
+    quick_anglican_lesser({
+        name: "George, martyr",
+        wikipedia_article_titles: ["Saint_George"],
+        month: 4,
+        day: 23,
+    }),
+    quick_anglican_lesser({
+        name: "ANZAC Day",
+        wikipedia_article_titles: ["Anzac_Day"],
+        month: 4,
+        day: 25,
+    }),
+    quick_anglican_lesser({
+        name: "Catherine of Siena, spiritual teacher",
+        wikipedia_article_titles: ["Catherine_of_Siena"],
+        month: 4,
+        day: 29,
+    }),
+    quick_anglican_lesser({
+        name: "Athanasius, bishop of Alexandria, teacher",
+        wikipedia_article_titles: ["Athanasius_of_Alexandria"],
+        month: 5,
+        day: 2,
+    }),
+    quick_anglican_lesser({
+        name: "Julian of Norwich, holy woman and mystic",
+        wikipedia_article_titles: ["Julian_of_Norwich"],
+        month: 5,
+        day: 8,
+    }),
+    quick_anglican_lesser({
+        name: "Dunstan, archbishop of Canterbury",
+        wikipedia_article_titles: ["Dunstan"],
+        month: 5,
+        day: 19,
+    }),
+    quick_anglican_lesser({
+        name: "John and Charles Wesley, evangelists",
+        wikipedia_article_titles: ["John_Wesley", "Charles_Wesley"],
+        month: 5,
+        day: 24,
+    }),
+    quick_anglican_lesser({
+        name: "Bede of Jarrow, monk, priest and teacher",
+        wikipedia_article_titles: ["Bede"],
+        month: 5,
+        day: 25,
+    }),
+    quick_anglican_lesser({
+        name: "Augustine of Canterbury, missionary and bishop",
+        wikipedia_article_titles: ["Augustine_of_Canterbury"],
+        month: 5,
+        day: 26,
+    }),
+    // NB: week of prayer for reconcilliation has been skipped
+    quick_anglican_lesser({
+        name: "The Visit of the Blessed Virgin Mary to Elizabeth",
+        wikipedia_article_titles: ["Visitation_(Christianity)"],
+        month: 5,
+        day: 31,
+    }),
+    quick_anglican_lesser({
+        name: "Justin, martyr at Rome",
+        wikipedia_article_titles: ["Justin_Martyr"],
+        month: 6,
+        day: 1,
+    }),
+    quick_anglican_lesser({
+        name: "Martyrs of Uganda",
+        wikipedia_article_titles: ["Martyrs_of_Uganda"],
+        month: 6,
+        day: 3,
+    }),
+    quick_anglican_lesser({
+        name: "Janani Luwum, archbishop of Uganda, martyr",
+        wikipedia_article_titles: ["Janani_Luwum"],
+        month: 6,
+        day: 3,
+    }),
+    quick_anglican_lesser({
+        name: "John XXIII, bishop of Rome, reformer",
+        wikipedia_article_titles: ["Pope_John_XXIII"],
+        month: 6,
+        day: 3,
+    }),
 ];
 
 export default Festivals;
