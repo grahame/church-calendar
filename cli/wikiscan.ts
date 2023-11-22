@@ -25,7 +25,7 @@ const get_extract = async (article: string) => {
     url.searchParams.set("explaintext", "");
     url.searchParams.set("redirects", "1");
     url.searchParams.set("titles", article);
-    url.searchParams.set("pithumbsize", "512");
+    url.searchParams.set("pithumbsize", "256");
     const api_url = url.toString();
     const resp = await fetch(api_url);
     const json = await resp.json();
