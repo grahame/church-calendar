@@ -171,6 +171,84 @@ const Festivals: Festival[] = [
         month: 2,
         day: 27,
     }),
+    quick_anglican_lesser({
+        name: "David, bishop of Wales and martyr",
+        wikipedia_article_titles: ["David_of_Wales"],
+        month: 3,
+        day: 1,
+    }),
+    quick_anglican_lesser({
+        name: "Chad, bishop of Lichfield and missionary",
+        wikipedia_article_titles: ["Chad_of_Mercia"],
+        month: 3,
+        day: 2,
+    }),
+    quick_anglican_lesser({
+        name: "Perpetua and her companions, martyrs",
+        wikipedia_article_titles: ["Perpetua_and_Felicity"],
+        month: 3,
+        day: 7,
+    }),
+    quick_anglican_lesser({
+        name: "John of God, worker among the sick and poor",
+        wikipedia_article_titles: ["John_of_God"],
+        month: 3,
+        day: 8,
+    }),
+    quick_anglican_lesser({
+        name: "Sister Emma SSA, superior of the Society of the Sacred Advent",
+        wikipedia_article_titles: ["Emma_Crawford"],
+        month: 3,
+        day: 9,
+    }),
+    quick_anglican_lesser({
+        name: "Patrick, bishop and missionary",
+        wikipedia_article_titles: ["Saint_Patrick"],
+        month: 3,
+        day: 17,
+    }),
+    quick_anglican_lesser({
+        name: "Cyril of Jerusalem, bishop and teacher",
+        wikipedia_article_titles: ["Cyril_of_Jerusalem"],
+        month: 3,
+        day: 18,
+    }),
+    quick_anglican_lesser({
+        name: "Cuthbert, bishop and missionary",
+        wikipedia_article_titles: ["Cuthbert_of_Lindisfarne"],
+        month: 3,
+        day: 20,
+    }),
+    quick_anglican_lesser({
+        name: "Thomas Cranmer, archbishop of Canterbury, martyr and liturgist",
+        wikipedia_article_titles: ["Thomas_Cranmer"],
+        month: 3,
+        day: 21,
+    }),
+    quick_anglican_lesser({
+        name: "Thomas Ken, bishop of Bath and Wells, teacher",
+        wikipedia_article_titles: ["Thomas_Ken"],
+        month: 3,
+        day: 21,
+    }),
+    quick_anglican_lesser({
+        name: "Oscar Romero, archbishop of San Salvador",
+        wikipedia_article_titles: ["Óscar_Romero"],
+        month: 3,
+        day: 24,
+    }),
+    quick_anglican_lesser({
+        name: "Paul Couturier, ecumenist",
+        wikipedia_article_titles: ["Paul_Couturier"],
+        month: 3,
+        day: 24,
+    }),
+    quick_anglican_lesser({
+        name: "John Keble, priest",
+        wikipedia_article_titles: ["John_Keble"],
+        month: 3,
+        day: 29,
+    }),
 ];
 
 export default Festivals;
