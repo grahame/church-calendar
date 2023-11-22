@@ -55,6 +55,8 @@ const scan = async (outdir: string) => {
     }
 };
 
+const combine = async (outdir: string) => {};
+
 const main = async () => {
     const outdir = Deno.args[0];
     if (!outdir) {

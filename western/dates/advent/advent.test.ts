@@ -1,5 +1,4 @@
 import { advent } from "./advent.ts";
-import { assertEquals } from "../../../testfuncs.ts";
 import { testDateFunc } from "../../../testcommon.ts";
 
 Deno.test("advent calculations correct", () => {

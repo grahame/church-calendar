@@ -1,4 +1,4 @@
-import { assert } from "../../testfuncs.ts";
+import { assert } from "../../libs.ts";
 import { calendar } from "./anglican-church-of-australia.ts";
 
 Deno.test("Anglican Church of Australia calendar produces output", () => {

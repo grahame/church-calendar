@@ -1,4 +1,4 @@
-import { assert } from "../testfuncs.ts";
+import { assert } from "../libs.ts";
 import { Temporal } from "../temporal.ts";
 import { n_sundays_after, n_sundays_before } from "./sunday.ts";
 
