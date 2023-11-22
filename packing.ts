@@ -4,8 +4,8 @@ import {
     ObservanceFestivalList,
     ResolvedCalendar,
     date_within_liturgical_year,
-} from "../calendar.ts";
-import { Temporal } from "../temporal.ts";
+} from "./calendar.ts";
+import { Temporal } from "./temporal.ts";
 
 export type PackingIndex = { [key: string]: EitherObservanceFestival };
 

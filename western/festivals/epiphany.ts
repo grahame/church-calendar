@@ -60,7 +60,7 @@ const Festivals: Festival[] = [
     {
         slug: "epiphany",
         name: "Epiphany",
-        wikipedia_en_article_title: "Epiphany (holiday)",
+        wikipedia_article_titles: ["Epiphany (holiday)"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -75,7 +75,7 @@ const Festivals: Festival[] = [
     {
         slug: "the-baptism-of-our-lord",
         name: "The Baptism of our Lord",
-        wikipedia_en_article_title: "Baptism of the Lord",
+        wikipedia_article_titles: ["Baptism of the Lord"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],

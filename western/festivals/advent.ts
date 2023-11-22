@@ -5,7 +5,7 @@ const Festivals: Festival[] = [
     {
         slug: "advent-1",
         name: "First Sunday of Advent",
-        wikipedia_en_article_title: "First Sunday of Advent",
+        wikipedia_article_titles: ["First Sunday of Advent"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -19,7 +19,7 @@ const Festivals: Festival[] = [
     {
         slug: "advent-2",
         name: "Second Sunday of Advent",
-        wikipedia_en_article_title: "Second Sunday of Advent",
+        wikipedia_article_titles: ["Second Sunday of Advent"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -33,7 +33,7 @@ const Festivals: Festival[] = [
     {
         slug: "advent-3",
         name: "Third Sunday of Advent",
-        wikipedia_en_article_title: "Third Sunday of Advent",
+        wikipedia_article_titles: ["Third Sunday of Advent"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -47,7 +47,7 @@ const Festivals: Festival[] = [
     {
         slug: "advent-4",
         name: "Fourth Sunday of Advent",
-        wikipedia_en_article_title: "Fourth Sunday of Advent",
+        wikipedia_article_titles: ["Fourth Sunday of Advent"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],

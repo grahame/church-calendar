@@ -1,5 +1,5 @@
 import { Denomination, LiturgicalYearContext, ObservationLevel, ResolvedCalendar } from "../../calendar.ts";
-import { PackingIndex, pack_observances, resolve_observances } from "../../cli/packing.ts";
+import { PackingIndex, pack_observances, resolve_observances } from "../../packing.ts";
 import { make_festival_index } from "../../festivalindex.ts";
 import { make_liturgical_year_context } from "../dates/index.ts";
 import Festivals from "../festivals/index.ts";

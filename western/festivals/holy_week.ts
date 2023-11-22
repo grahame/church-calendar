@@ -5,7 +5,7 @@ const Festivals: Festival[] = [
     {
         slug: "palm-sunday",
         name: "Palm Sunday",
-        wikipedia_en_article_title: "Palm Sunday",
+        wikipedia_article_titles: ["Palm Sunday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -20,7 +20,7 @@ const Festivals: Festival[] = [
     {
         slug: "holy-monday",
         name: "Holy Monday",
-        wikipedia_en_article_title: "Holy Monday",
+        wikipedia_article_titles: ["Holy Monday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -35,7 +35,7 @@ const Festivals: Festival[] = [
     {
         slug: "holy-tuesday",
         name: "Holy Tuesday",
-        wikipedia_en_article_title: "Holy Tuesday",
+        wikipedia_article_titles: ["Holy Tuesday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -50,7 +50,7 @@ const Festivals: Festival[] = [
     {
         slug: "holy-wednesday",
         name: "Holy Wednesday",
-        wikipedia_en_article_title: "Holy Wednesday",
+        wikipedia_article_titles: ["Holy Wednesday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],

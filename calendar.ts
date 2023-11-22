@@ -48,8 +48,7 @@ export type Festival = {
     name: string;
     description?: string;
     image_link?: string;
-    // e.g. https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Stack%20Overflow
-    wikipedia_en_article_title?: string;
+    wikipedia_article_titles?: string[];
     observances?: Observance[];
     calendar_observances?: CalendarObservance[];
 };

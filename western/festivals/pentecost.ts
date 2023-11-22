@@ -27,7 +27,7 @@ const sundays_after_pentecost = () => {
         sundays.push({
             slug: `christ-the-king-${sunday_after}`,
             name: "Christ the King",
-            wikipedia_en_article_title: "Christ the King",
+            wikipedia_article_titles: ["Christ the King"],
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
@@ -54,7 +54,7 @@ const Festivals: Festival[] = [
     {
         slug: "pentecost",
         name: "Pentecost",
-        wikipedia_en_article_title: "Pentecost",
+        wikipedia_article_titles: ["Pentecost"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -68,7 +68,7 @@ const Festivals: Festival[] = [
     {
         slug: "trinity-sunday",
         name: "Trinity Sunday",
-        wikipedia_en_article_title: "Trinity Sunday",
+        wikipedia_article_titles: ["Trinity Sunday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],

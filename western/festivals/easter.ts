@@ -1,13 +1,11 @@
 import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { n_sundays_after } from "../sunday.ts";
 
-Denomination.ANG_AU;
-
 const Festivals: Festival[] = [
     {
         slug: "easter-day",
         name: "Easter Day",
-        wikipedia_en_article_title: "Easter",
+        wikipedia_article_titles: ["Easter"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -21,7 +19,7 @@ const Festivals: Festival[] = [
     {
         slug: "easter-monday",
         name: "Monday in Easter Week",
-        wikipedia_en_article_title: "Easter Monday",
+        wikipedia_article_titles: ["Easter Monday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -35,7 +33,7 @@ const Festivals: Festival[] = [
     {
         slug: "easter-tuesday",
         name: "Tuesday in Easter Week",
-        wikipedia_en_article_title: "Easter Tuesday",
+        wikipedia_article_titles: ["Easter Tuesday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -75,7 +73,7 @@ const Festivals: Festival[] = [
     {
         slug: "easter-friday",
         name: "Friday in Easter Week",
-        wikipedia_en_article_title: "Easter Friday",
+        wikipedia_article_titles: ["Easter Friday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -89,7 +87,7 @@ const Festivals: Festival[] = [
     {
         slug: "easter-saturday",
         name: "Saturday in Easter Week",
-        wikipedia_en_article_title: "Easter Saturday",
+        wikipedia_article_titles: ["Easter Saturday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -103,7 +101,7 @@ const Festivals: Festival[] = [
     {
         slug: "easter-2",
         name: "Second Sunday of Easter",
-        wikipedia_en_article_title: "Second Sunday of Easter",
+        wikipedia_article_titles: ["Second Sunday of Easter"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -117,7 +115,7 @@ const Festivals: Festival[] = [
     {
         slug: "easter-3",
         name: "Third Sunday of Easter",
-        wikipedia_en_article_title: "Third Sunday of Easter",
+        wikipedia_article_titles: ["Third Sunday of Easter"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -131,7 +129,7 @@ const Festivals: Festival[] = [
     {
         slug: "easter-4",
         name: "Fourth Sunday of Easter",
-        wikipedia_en_article_title: "Fourth Sunday of Easter",
+        wikipedia_article_titles: ["Fourth Sunday of Easter"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -145,7 +143,7 @@ const Festivals: Festival[] = [
     {
         slug: "easter-5",
         name: "Fifth Sunday of Easter",
-        wikipedia_en_article_title: "Fifth Sunday of Easter",
+        wikipedia_article_titles: ["Fifth Sunday of Easter"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -172,7 +170,7 @@ const Festivals: Festival[] = [
     {
         slug: "ascension-day",
         name: "Ascension Day",
-        wikipedia_en_article_title: "Feast of the Ascension",
+        wikipedia_article_titles: ["Feast of the Ascension"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],

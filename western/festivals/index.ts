@@ -1,5 +1,3 @@
-import { Denomination } from "../../calendar.ts";
-
 import advent_festivals from "./advent.ts";
 import christmas_festivals from "./christmas.ts";
 import easter_festivals from "./easter.ts";
@@ -9,8 +7,6 @@ import holy_week_festivals from "./holy_week.ts";
 import lent_festivals from "./lent.ts";
 import pentecost_festivals from "./pentecost.ts";
 import triduum_festivals from "./triduum.ts";
-
-Denomination.ANG_AU;
 
 const festivals = [
     ...advent_festivals,

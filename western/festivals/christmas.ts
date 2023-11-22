@@ -12,7 +12,7 @@ const Festivals: Festival[] = [
     {
         slug: "christmas-day",
         name: "Christmas Day",
-        wikipedia_en_article_title: "Christmas",
+        wikipedia_article_titles: ["Christmas"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -26,7 +26,7 @@ const Festivals: Festival[] = [
     {
         slug: "christmas-1",
         name: "First Sunday after Christmas",
-        wikipedia_en_article_title: "Christmas Sunday",
+        wikipedia_article_titles: ["Christmas Sunday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],

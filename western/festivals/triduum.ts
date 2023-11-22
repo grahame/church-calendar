@@ -1,12 +1,10 @@
 import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 
-Denomination.ANG_AU;
-
 const Festivals: Festival[] = [
     {
         slug: "maundy-thursday",
         name: "Maundy Thursday",
-        wikipedia_en_article_title: "Maundy Thursday",
+        wikipedia_article_titles: ["Maundy Thursday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -20,7 +18,7 @@ const Festivals: Festival[] = [
     {
         slug: "good-friday",
         name: "Good Friday",
-        wikipedia_en_article_title: "Good Friday",
+        wikipedia_article_titles: ["Good Friday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -34,7 +32,7 @@ const Festivals: Festival[] = [
     {
         slug: "holy-saturday",
         name: "Holy Saturday",
-        wikipedia_en_article_title: "Holy Saturday",
+        wikipedia_article_titles: ["Holy Saturday"],
         observances: [
             {
                 name: "Saturday in Holy Week",

@@ -1,13 +1,11 @@
 import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { n_sundays_before } from "../sunday.ts";
 
-Denomination.ANG_AU;
-
 const Festivals: Festival[] = [
     {
         slug: "ash-wednesday",
         name: "Ash Wednesday",
-        wikipedia_en_article_title: "Ash Wednesday",
+        wikipedia_article_titles: ["Ash Wednesday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -21,7 +19,7 @@ const Festivals: Festival[] = [
     {
         slug: "lent-1",
         name: "First Sunday in Lent",
-        wikipedia_en_article_title: "Quadragesima Sunday",
+        wikipedia_article_titles: ["Quadragesima Sunday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -61,7 +59,7 @@ const Festivals: Festival[] = [
     {
         slug: "lent-4",
         name: "Fourth Sunday in Lent",
-        wikipedia_en_article_title: "Laetare Sunday",
+        wikipedia_article_titles: ["Laetare Sunday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -75,7 +73,7 @@ const Festivals: Festival[] = [
     {
         slug: "lent-5",
         name: "Fifth Sunday in Lent",
-        wikipedia_en_article_title: "Passion Sunday",
+        wikipedia_article_titles: ["Passion Sunday"],
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
