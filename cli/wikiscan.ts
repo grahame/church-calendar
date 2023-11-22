@@ -1,6 +1,7 @@
 // deno-lint-ignore-file no-explicit-any
 import Festivals from "../western/festivals/index.ts";
 import { path_mod, fs_mod } from "../libs.ts";
+import { Temporal } from "../temporal.ts";
 
 const article_set = () => {
     const wiki_articles = new Set<string>();
@@ -9,7 +10,7 @@ const article_set = () => {
             continue;
         }
         for (const wiki_article of festival.wikipedia_article_titles) {
-            wiki_articles.add(wiki_article.replace(/ /g, "_"));
+            wiki_articles.add(wiki_article);
         }
     }
     return wiki_articles;
@@ -24,6 +25,7 @@ const get_extract = async (article: string) => {
     url.searchParams.set("explaintext", "");
     url.searchParams.set("redirects", "1");
     url.searchParams.set("titles", article);
+    url.searchParams.set("pithumbsize", "512");
     const api_url = url.toString();
     const resp = await fetch(api_url);
     const json = await resp.json();
@@ -31,7 +33,7 @@ const get_extract = async (article: string) => {
         return;
     }
     return {
-        captured: new Date().toISOString(),
+        captured: Temporal.Now.plainDateTimeISO("UTC").toString(),
         article,
         api_url,
         article_url: `https://en.wikipedia.org/wiki/${article}`,
