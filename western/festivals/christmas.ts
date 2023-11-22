@@ -16,6 +16,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [christmas_date(ctxt)];
@@ -30,6 +31,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE, // this is ambiguous in APBA but makes sense
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_after(christmas_date(ctxt), 1)];
@@ -43,6 +45,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE, // this is ambiguous in APBA but makes sense
                 dates: (ctxt: LiturgicalYearContext) => {
                     const christmas_2 = n_sundays_after(christmas_date(ctxt), 2);

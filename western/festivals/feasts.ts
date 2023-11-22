@@ -1,4 +1,4 @@
-import { in_calendar_year } from "../../calendar.ts";
+import { FestivalAttributes, in_calendar_year } from "../../calendar.ts";
 import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { n_sundays_after } from "../sunday.ts";
 
@@ -11,6 +11,7 @@ const Festivals: Festival[] = [
             {
                 denominations: [Denomination.ANG_AU],
                 level: ObservationLevel.PRINCIPAL,
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     const all_saints = in_calendar_year(year, 11, 1);
                     return [all_saints, n_sundays_after(all_saints, 1)];
@@ -25,6 +26,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 1, 1)];
@@ -39,6 +41,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 2, 2)];
@@ -53,6 +56,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 2, 24), in_calendar_year(year, 5, 14)];
@@ -67,6 +71,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 3, 19)];
@@ -81,6 +86,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 name: "The Annunciation to the Blessed Virgin Mary",
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
@@ -96,6 +102,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 4, 25), in_calendar_year(year, 4, 26)];
@@ -110,6 +117,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 5, 1), in_calendar_year(year, 5, 3)];
@@ -124,6 +132,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 6, 11)];
@@ -138,6 +147,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 6, 24)];
@@ -152,6 +162,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 6, 29)];
@@ -166,6 +177,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 7, 22)];
@@ -180,6 +192,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 7, 25)];
@@ -194,6 +207,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 8, 6)];
@@ -208,6 +222,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 8, 15)];
@@ -222,6 +237,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 8, 24)];
@@ -236,6 +252,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 9, 21)];
@@ -250,6 +267,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 9, 29)];
@@ -264,6 +282,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 10, 18)];
@@ -278,6 +297,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 10, 28)];
@@ -292,6 +312,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 11, 30)];
@@ -306,6 +327,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 12, 21), in_calendar_year(year, 8, 3)];
@@ -320,6 +342,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 12, 26), in_calendar_year(year, 8, 3)];
@@ -334,6 +357,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 12, 27), in_calendar_year(year, 5, 6)];
@@ -348,6 +372,7 @@ const Festivals: Festival[] = [
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
                     return [in_calendar_year(year, 12, 28)];

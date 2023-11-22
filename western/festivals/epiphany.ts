@@ -1,4 +1,11 @@
-import { Denomination, Festival, LiturgicalYearContext, ObservationLevel, in_liturgical_year } from "../../calendar.ts";
+import {
+    Denomination,
+    Festival,
+    FestivalAttributes,
+    LiturgicalYearContext,
+    ObservationLevel,
+    in_liturgical_year,
+} from "../../calendar.ts";
 import { capitalize, nthify } from "../../nth.ts";
 import { Temporal } from "../../temporal.ts";
 import { n_sundays_after, n_sundays_before } from "../sunday.ts";
@@ -18,6 +25,7 @@ const sundays_after_epiphany = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
+                    attributes: [],
                     level: ObservationLevel.LESSER_FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const epiphany = epiphany_date(ctxt);
@@ -38,6 +46,7 @@ const sundays_after_epiphany = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
+                    attributes: [],
                     level: ObservationLevel.LESSER_FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const epiphany = epiphany_date(ctxt);
@@ -64,6 +73,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     const epiphany = epiphany_date(ctxt);
@@ -79,6 +89,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     const epiphany = epiphany_date(ctxt);

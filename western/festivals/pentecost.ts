@@ -1,4 +1,4 @@
-import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
+import { Denomination, Festival, FestivalAttributes, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { capitalize, nthify } from "../../nth.ts";
 import { Temporal } from "../../temporal.ts";
 
@@ -12,6 +12,7 @@ const sundays_after_pentecost = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
+                    attributes: [],
                     level: ObservationLevel.LESSER_FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const dt = ctxt.pentecost.add({ days: 7 * sunday_after });
@@ -31,6 +32,7 @@ const sundays_after_pentecost = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
+                    attributes: [FestivalAttributes.COLOUR_WHITE],
                     level: ObservationLevel.LESSER_FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const dt = ctxt.pentecost.add({ days: 7 * sunday_after });
@@ -58,6 +60,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.pentecost];
@@ -72,6 +75,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.pentecost.add({ days: 7 })];

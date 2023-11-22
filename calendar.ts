@@ -14,6 +14,16 @@ export enum ObservationLevel {
     LESSER_FESTIVAL = "lesser-festival",
 }
 
+export enum FestivalAttributes {
+    COLOUR_RED = "colour-red",
+    COLOUR_WHITE = "colour-white",
+    COLOUR_GREEN = "colour-green",
+    COLOUR_VIOLET = "colour-violet",
+    COLOUR_VIOLET_OR_BLUE = "colour-violet-or-blue",
+    COLOUR_BLACK = "colour-black",
+    COLOUR_ROSE = "colour-rose",
+}
+
 export type LiturgicalYearContext = {
     year: number;
     first_day: Temporal.PlainDate;
@@ -29,6 +39,7 @@ export type Observance = {
     // the denominational name of the observance
     name?: string;
     level: ObservationLevel;
+    attributes: FestivalAttributes[];
     dates: (ctxt: LiturgicalYearContext) => Temporal.PlainDate[];
 };
 
@@ -38,6 +49,7 @@ export type CalendarObservance = {
     // the denominational name of the observance
     name?: string;
     level: ObservationLevel;
+    attributes: FestivalAttributes[];
     dates: (ctxt: LiturgicalYearContext, calendar_year: number) => Temporal.PlainDate[];
 };
 

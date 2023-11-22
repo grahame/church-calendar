@@ -1,4 +1,4 @@
-import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
+import { Denomination, Festival, FestivalAttributes, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 
 const Festivals: Festival[] = [
     {
@@ -8,6 +8,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -3 })];
@@ -22,6 +23,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -2 })];
@@ -37,6 +39,7 @@ const Festivals: Festival[] = [
             {
                 name: "Saturday in Holy Week",
                 denominations: [Denomination.ANG_AU],
+                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: -1 })];

@@ -1,4 +1,4 @@
-import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
+import { Denomination, Festival, FestivalAttributes, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { n_sundays_before } from "../sunday.ts";
 
 const Festivals: Festival[] = [
@@ -9,6 +9,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_RED],
                 level: ObservationLevel.NON_DISPLACABLE,
                 name: "Sunday in Holy Week (Palm Sunday)",
                 dates: (ctxt: LiturgicalYearContext) => {
@@ -24,6 +25,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 name: "Monday in Holy Week",
                 dates: (ctxt: LiturgicalYearContext) => {
@@ -39,6 +41,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [],
                 name: "Tuesday in Holy Week",
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
@@ -54,6 +57,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                attributes: [],
                 name: "Wednesday in Holy Week",
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
