@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import Festivals from "../western/festivals/index.ts";
 import { path_mod, fs_mod } from "../libs.ts";
 
@@ -55,15 +56,29 @@ const scan = async (outdir: string) => {
     }
 };
 
-const combine = async (outdir: string) => {};
+const combine = (outdir: string, outfile: string) => {
+    const files = fs_mod.expandGlobSync(path_mod.join(outdir, "*.json"));
+    const combined: { [key: string]: any } = {};
+    for (const file of files) {
+        const data: any = JSON.parse(Deno.readTextFileSync(file.path));
+        const article: string = data.article;
+        combined[article] = data;
+    }
+    Deno.writeTextFileSync(outfile, JSON.stringify(combined));
+};
 
 const main = async () => {
+    const usage = () => console.log("Usage: wikiscan <outdir> <outfile>");
     const outdir = Deno.args[0];
     if (!outdir) {
-        console.log("specify an output directory");
-        return;
+        return usage();
+    }
+    const outfile = Deno.args[1];
+    if (!outfile) {
+        return usage();
     }
     await scan(outdir);
+    combine(outdir, outfile);
 };
 
 await main();
