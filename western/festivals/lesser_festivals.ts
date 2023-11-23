@@ -1,5 +1,6 @@
 import { FestivalAttributes, in_calendar_year } from "../../calendar.ts";
 import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
+import { n_sundays_after, n_sundays_before } from "../sunday.ts";
 
 export type QuickFixedAnglican = {
     name: string;
@@ -712,6 +713,323 @@ const Festivals: Festival[] = [
         day: 15,
         attributes: [FestivalAttributes.COLOUR_WHITE],
     }),
+    quick_anglican_lesser({
+        name: "Ninian of Galloway, bishop and missionary",
+        wikipedia_article_titles: ["Saint_Ninian"],
+        month: 9,
+        day: 16,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Hildegard of Bingen, abbess and spiritual writer",
+        wikipedia_article_titles: ["Hildegard_of_Bingen"],
+        month: 9,
+        day: 17,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "John Ramsden Wollaston, priest and missionary of Western Australia",
+        wikipedia_article_titles: ["John_Wollaston_(priest)"],
+        month: 9,
+        day: 18,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "John Coleridge Patteson, first bishop of Melanesia, martyr",
+        wikipedia_article_titles: ["John_Patteson_(bishop)"],
+        month: 9,
+        day: 20,
+        attributes: [FestivalAttributes.COLOUR_RED],
+    }),
+    quick_anglican_lesser({
+        name: "Sergius of Moscow, abbot and teacher",
+        wikipedia_article_titles: ["Sergius_of_Radonezh"],
+        month: 9,
+        day: 25,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Lancelot Andrewes, bishop and teacher",
+        wikipedia_article_titles: ["Lancelot_Andrewes"],
+        month: 9,
+        day: 26,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Vincent de Paul, priest and worker with the poor",
+        wikipedia_article_titles: ["Vincent_de_Paul"],
+        month: 9,
+        day: 27,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Jerome, priest and biblical scholar",
+        wikipedia_article_titles: ["Jerome"],
+        month: 9,
+        day: 30,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Francis of Assisi, friar and preacher",
+        wikipedia_article_titles: ["Francis_of_Assisi"],
+        month: 10,
+        day: 4,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "William Tyndale, biblical scholar",
+        wikipedia_article_titles: ["William_Tyndale"],
+        month: 10,
+        day: 6,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Elizabeth Fry, prison reformer",
+        wikipedia_article_titles: ["Elizabeth_Fry"],
+        month: 10,
+        day: 6,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Teresa of Avila, teacher",
+        wikipedia_article_titles: ["Teresa_of_Avila"],
+        month: 10,
+        day: 15,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Hugh Latimer and Nicholas Ridley, bishops and martyrs",
+        wikipedia_article_titles: ["Hugh_Latimer", "Nicholas_Ridley_(martyr)"],
+        month: 10,
+        day: 16,
+        attributes: [FestivalAttributes.COLOUR_RED],
+    }),
+    quick_anglican_lesser({
+        name: "Ignatius of Antioch, bishop and martyr",
+        wikipedia_article_titles: ["Ignatius_of_Antioch"],
+        month: 10,
+        day: 17,
+        attributes: [FestivalAttributes.COLOUR_RED],
+    }),
+    quick_anglican_lesser({
+        name: "Henry Martyn, missionary and Bible translator in India and Persia",
+        wikipedia_article_titles: ["Henry_Martyn"],
+        month: 10,
+        day: 18,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "James of Jerusalem, brother of our Lord, martyr",
+        wikipedia_article_titles: ["James,_brother_of_Jesus"],
+        month: 10,
+        day: 23,
+        attributes: [FestivalAttributes.COLOUR_RED],
+    }),
+    quick_anglican_lesser({
+        name: "United Nations",
+        wikipedia_article_titles: ["United_Nations"],
+        month: 10,
+        day: 24,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Martin Luther and other Continental reformers",
+        wikipedia_article_titles: ["Martin_Luther"],
+        month: 10,
+        day: 31,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "All Souls",
+        wikipedia_article_titles: ["All_Souls%27_Day"],
+        month: 11,
+        day: 2,
+        attributes: [FestivalAttributes.COLOUR_VIOLET],
+    }),
+    quick_anglican_lesser({
+        name: "Richard Hooker, priest and teacher",
+        wikipedia_article_titles: ["Richard_Hooker"],
+        month: 11,
+        day: 3,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Saints, martyrs, missionaries and teachers of the Anglican Communion",
+        month: 11,
+        day: 8,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Leo of Rome, bishop and teacher",
+        wikipedia_article_titles: ["Pope_Leo_I"],
+        month: 11,
+        day: 10,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Martin, Bishop of Tours",
+        wikipedia_article_titles: ["Martin_of_Tours"],
+        month: 11,
+        day: 11,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Charles Siméon, evangelist",
+        wikipedia_article_titles: ["Charles_Simeon"],
+        month: 11,
+        day: 12,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Margaret of Scotland, queen, helper of the poor",
+        wikipedia_article_titles: ["Saint_Margaret_of_Scotland"],
+        month: 11,
+        day: 16,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Hilda of Whitby, abbess",
+        wikipedia_article_titles: ["Hilda_of_Whitby"],
+        month: 11,
+        day: 17,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Hugh, bishop of Lincoln",
+        wikipedia_article_titles: ["Hugh_of_Lincoln"],
+        month: 11,
+        day: 17,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Elizabeth of Hungary, princess and philanthropist",
+        wikipedia_article_titles: ["Elizabeth_of_Hungary"],
+        month: 11,
+        day: 19,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Clement of Rome, bishop and martyr",
+        wikipedia_article_titles: ["Pope_Clement_I"],
+        month: 11,
+        day: 23,
+        attributes: [FestivalAttributes.COLOUR_RED],
+    }),
+    quick_anglican_lesser({
+        name: "James Noble, first indigenous Australian ordained",
+        wikipedia_article_titles: ["James_Noble_(clergyman)"],
+        month: 11,
+        day: 25,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Frances Perry, founder of the Royal Women’s Hospital, Melbourne",
+        wikipedia_article_titles: ["Frances_Perry_(philanthropist)"],
+        month: 12,
+        day: 2,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Francis Xavier, priest and missionary",
+        wikipedia_article_titles: ["Francis_Xavier"],
+        month: 12,
+        day: 3,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Nicholas Ferrar, deacon and man of prayer",
+        wikipedia_article_titles: ["Nicholas_Ferrar"],
+        month: 12,
+        day: 4,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Nicholas of Myra, bishop and philanthropist",
+        wikipedia_article_titles: ["Saint_Nicholas"],
+        month: 12,
+        day: 6,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Ambrose of Milan, bishop and teacher",
+        wikipedia_article_titles: ["Ambrose"],
+        month: 12,
+        day: 7,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "The Conception of the Blessed Virgin Mary",
+        wikipedia_article_titles: ["Feast_of_the_Immaculate_Conception"],
+        month: 12,
+        day: 8,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Richard Baxter, pastor and spiritual writer",
+        wikipedia_article_titles: ["Richard_Baxter"],
+        month: 12,
+        day: 8,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Lucy, martyr and virgin",
+        wikipedia_article_titles: ["Saint_Lucy"],
+        month: 12,
+        day: 13,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "John of the Cross, mystic and teacher",
+        wikipedia_article_titles: ["John_of_the_Cross"],
+        month: 12,
+        day: 14,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "Thomas Becket, archbishop of Canterbury, martyr",
+        wikipedia_article_titles: ["Thomas_Becket"],
+        month: 12,
+        day: 29,
+        attributes: [FestivalAttributes.COLOUR_RED],
+    }),
+    quick_anglican_lesser({
+        name: "Josephine Butler, social reformer",
+        wikipedia_article_titles: ["Josephine_Butler"],
+        month: 12,
+        day: 30,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    quick_anglican_lesser({
+        name: "John Wyclif, teacher and reformer",
+        wikipedia_article_titles: ["John_Wycliffe"],
+        month: 12,
+        day: 31,
+        attributes: [FestivalAttributes.COLOUR_WHITE],
+    }),
+    {
+        slug: "defence-forces-sunday",
+        name: "Defence Forces Sunday",
+        calendar_observances: [
+            {
+                denominations: [Denomination.ANG_AU],
+                attributes: [FestivalAttributes.COLOUR_WHITE],
+                level: ObservationLevel.LESSER_FESTIVAL,
+                dates: (ctxt: LiturgicalYearContext) => {
+                    // the Sunday nearest to November 11
+                    const nov11 = in_calendar_year(ctxt.year, 11, 11);
+                    if (nov11.dayOfWeek === 7) {
+                        return [nov11];
+                    }
+                    const before = n_sundays_before(nov11, 1);
+                    const after = n_sundays_after(nov11, 1);
+                    if (11 - before.day < after.day - 11) {
+                        return [before];
+                    }
+                    return [after];
+                },
+            },
+        ],
+    },
 ];
 
 export default Festivals;
