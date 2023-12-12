@@ -12,7 +12,7 @@ export type QuickFixedAnglican = {
 
 const quick_anglican_lesser = (obs: QuickFixedAnglican): Festival => {
     return {
-        slug: obs.name.toLowerCase().replace(/ /g, "-"),
+        slug: obs.name.toLowerCase().replace(/ /g, "-").replace(",", ""),
         name: obs.name,
         wikipedia_article_titles: obs.wikipedia_article_titles,
         calendar_observances: [
@@ -21,7 +21,7 @@ const quick_anglican_lesser = (obs: QuickFixedAnglican): Festival => {
                 attributes: obs.attributes,
                 level: ObservationLevel.LESSER_FESTIVAL,
                 dates: (_ctxt: LiturgicalYearContext, year: number) => {
-                    return [in_calendar_year(year, 1, 2)];
+                    return [in_calendar_year(year, obs.month, obs.day)];
                 },
             },
         ],

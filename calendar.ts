@@ -98,7 +98,7 @@ export const in_liturgical_year = (ctxt: LiturgicalYearContext, month: number, d
     }
 };
 
-export type ResolvedCalendar = [Temporal.PlainDate, ResolvedObservance][];
+export type ResolvedCalendar = [Temporal.PlainDate, ResolvedObservance[]][];
 
 export type CalendarObservanceFestival = {
     type: "calendar";

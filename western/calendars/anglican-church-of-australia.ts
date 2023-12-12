@@ -18,18 +18,19 @@ export const calendar = (year: number): [LiturgicalYearContext, ResolvedCalendar
                     ...festival_index[denom][ObservationLevel.PRINCIPAL],
                     ...festival_index[denom][ObservationLevel.NON_DISPLACABLE],
                 ],
+                false,
                 false
             );
         }
     };
     const pack_festival_year = (ctxts: LiturgicalYearContext[]) => {
         for (const ctxt of ctxts) {
-            pack_observances(ctxt, index, festival_index[denom][ObservationLevel.FESTIVAL], true);
+            pack_observances(ctxt, index, festival_index[denom][ObservationLevel.FESTIVAL], true, false);
         }
     };
     const pack_lesser_festival_year = (ctxts: LiturgicalYearContext[]) => {
         for (const ctxt of ctxts) {
-            pack_observances(ctxt, index, festival_index[denom][ObservationLevel.LESSER_FESTIVAL], true);
+            pack_observances(ctxt, index, festival_index[denom][ObservationLevel.LESSER_FESTIVAL], true, true);
         }
     };
 

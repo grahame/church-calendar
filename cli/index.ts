@@ -7,7 +7,8 @@ const main = () => {
         `Calendar for liturgical year beginning ${ctxt.first_day.toString()}, ending ${ctxt.last_day.toString()}:`
     );
     for (const [dt, obvs] of placed_events) {
-        console.log(`${dt.toString()}: ${obvs.name}`);
+        const slugs = obvs.map((o) => o.slug).join(", ");
+        console.log(`${dt.toString()}: ${slugs}`);
     }
 };
 
