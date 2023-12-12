@@ -10,9 +10,17 @@ export type QuickFixedAnglican = {
     attributes: FestivalAttributes[];
 };
 
+const make_slug = (s: string) => {
+    // remove all non-alphanumerical characters
+    return s
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\w-]/g, "");
+};
+
 const quick_anglican_lesser = (obs: QuickFixedAnglican): Festival => {
     return {
-        slug: obs.name.toLowerCase().replace(/ /g, "-").replace(",", ""),
+        slug: make_slug(obs.name),
         name: obs.name,
         wikipedia_article_titles: obs.wikipedia_article_titles,
         calendar_observances: [
