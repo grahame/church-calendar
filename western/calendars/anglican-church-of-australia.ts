@@ -38,13 +38,14 @@ export const calendar = (year: number): [LiturgicalYearContext, ResolvedCalendar
     // one running from the secular 'calendar' (Jan 1 - Dec 31) and the other running
     // from the Church calendar (Advent - Christ the King). We need to resolve the
     // full year before in order to be able to resolve the current liturgical year,
-    // because some calendar-based observances from the previous year might fall in this
-    // liturgical year. This could possibly cascade back even further when the optional
-    // placement of liturgical dates is taken into account, but we can probably ignore
-    // that for now.
+    // because some calendar-based observances from the prior secular year might fall
+    // in this liturgical year.
     //
-    // An example of the problem occurs in 2022-2023; the Feast of Saint Andrew is observed
-    // twice within the liturgical year (2022-11-27 -> 2023-12-03)
+    // An example of the problem occurs in 2022-2023; the Feast of Saint Andrew (on the
+    // 30th of November) occurs twice within the liturgical year (2022-11-27 -> 2023-12-03)
+    //
+    // Further, in 1997 the Feast of Saint Andrew doesn't occur at all, because that liturgical
+    // year begins on the 1st of December and ends on the 29th of November.
     const ctxts = [make_liturgical_year_context(year - 1), make_liturgical_year_context(year)];
     pack_principal_years(ctxts);
     pack_festival_year(ctxts);

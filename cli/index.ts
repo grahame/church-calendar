@@ -4,7 +4,7 @@ import { getLiturgicalYear } from "../western/liturgicalyear.ts";
 
 const main = () => {
     // hard-coded timezone is to work around Chromium/node bug on macOS 14
-    const year = getLiturgicalYear(Temporal.Now.plainDateISO("Australia/Perth"));
+    const year = Number.parseInt(Deno.args[0]) || getLiturgicalYear(Temporal.Now.plainDateISO("Australia/Perth"));
     const [ctxt, placed_events] = aca_calendar(year);
     console.log(
         `Calendar for liturgical year beginning ${ctxt.first_day.toString()}, ending ${ctxt.last_day.toString()}:`
