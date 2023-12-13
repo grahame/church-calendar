@@ -1,4 +1,5 @@
 import { calendar as aca_calendar } from "../western/calendars/anglican-church-of-australia.ts";
+import { Temporal } from "../temporal.ts";
 
 const main = () => {
     const year = Number.parseInt(Deno.args[0]) || new Date().getFullYear();
