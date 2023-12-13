@@ -53,25 +53,24 @@ export type CalendarObservance = {
     dates: (ctxt: LiturgicalYearContext, calendar_year: number) => Temporal.PlainDate[];
 };
 
-// The definition of a festival within the Calendar of the Church
-// A festival might have multiple potential observation dates.
-export type Festival = {
+export type FestivalAttrs = {
     slug: string;
     name: string;
     description?: string;
     image_link?: string;
     wikipedia_article_titles?: string[];
+};
+
+// The definition of a festival within the Calendar of the Church
+// A festival might have multiple potential observation dates.
+export type Festival = FestivalAttrs & {
     observances?: Observance[];
     calendar_observances?: CalendarObservance[];
 };
 
 export type ResolvedObservance = {
     level: ObservationLevel;
-    slug: string;
-    name: string;
-    description?: string;
-    image_link?: string;
-};
+} & FestivalAttrs;
 
 export const date_within_liturgical_year = (ctxt: LiturgicalYearContext, date: Temporal.PlainDate) => {
     if (Temporal.PlainDate.compare(date, ctxt.first_day) == -1) {

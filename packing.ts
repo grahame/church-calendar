@@ -81,6 +81,7 @@ export const resolve_observances = (index: PackingIndex, ctxt: LiturgicalYearCon
                     name: either.observance.name || either.festival.name,
                     description: either.festival.description,
                     image_link: either.festival.image_link,
+                    wikipedia_article_titles: either.festival.wikipedia_article_titles,
                 };
             }),
         ]);
