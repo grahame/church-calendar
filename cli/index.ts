@@ -1,5 +1,5 @@
 import { Temporal } from "npm:@js-temporal/polyfill@0.4.4";
-import { calendar as aca_calendar } from "../western/calendars/anglican-church-of-australia.ts";
+import { calendar as aca_calendar, aca_seasons } from "../western/calendars/anglican-church-of-australia.ts";
 import { getLiturgicalYear } from "../western/liturgicalyear.ts";
 
 const main = () => {
@@ -9,9 +9,15 @@ const main = () => {
     console.log(
         `Calendar for liturgical year beginning ${ctxt.first_day.toString()}, ending ${ctxt.last_day.toString()}:`
     );
+    console.log("\nLiturgical seasons:");
+    const seasons = aca_seasons(year);
+    for (const season of seasons) {
+        console.log(`  ${season.name}: ${season.start_date.toString()} to ${season.end_date.toString()}`);
+    }
+    console.log("\nObservations:");
     for (const [dt, obvs] of placed_events) {
         const slugs = obvs.map((o) => o.slug).join(", ");
-        console.log(`${dt.toString()}: ${slugs}`);
+        console.log(`  ${dt.toString()}: ${slugs}`);
     }
 };
 

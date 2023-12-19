@@ -1,6 +1,10 @@
 import { Denomination, Festival, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { n_sundays_before } from "../sunday.ts";
 
+export const ash_wednesday_date = (ctxt: LiturgicalYearContext) => {
+    return ctxt.easter.add({ days: -46 });
+};
+
 const Festivals: Festival[] = [
     {
         slug: "ash-wednesday",
@@ -12,7 +16,7 @@ const Festivals: Festival[] = [
                 attributes: [],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
-                    return [ctxt.easter.add({ days: -46 })];
+                    return [ash_wednesday_date(ctxt)];
                 },
             },
         ],

@@ -33,6 +33,13 @@ export type LiturgicalYearContext = {
     pentecost: Temporal.PlainDate;
 };
 
+export type LiturgicalSeason = {
+    name: string;
+    start_date: Temporal.PlainDate;
+    end_date: Temporal.PlainDate;
+    colour: string;
+};
+
 export type Observance = {
     // the denominations that observe the feast in this manner
     denominations: Denomination[];

@@ -1,5 +1,5 @@
 import { Temporal } from "../temporal.ts";
-import { make_liturgical_year_context } from "./dates/index.ts";
+import { make_liturgical_year_context } from "./seasons/index.ts";
 
 export const getLiturgicalYear = (dt: Temporal.PlainDate): number => {
     // find the liturgical year containing `dt`

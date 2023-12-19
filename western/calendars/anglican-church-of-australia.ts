@@ -1,8 +1,78 @@
-import { Denomination, LiturgicalYearContext, ObservationLevel, ResolvedCalendar } from "../../calendar.ts";
+import {
+    Denomination,
+    FestivalAttributes,
+    LiturgicalSeason,
+    LiturgicalYearContext,
+    ObservationLevel,
+    ResolvedCalendar,
+    in_liturgical_year,
+} from "../../calendar.ts";
 import { PackingIndex, pack_observances, resolve_observances } from "../../packing.ts";
 import { make_festival_index } from "../../festivalindex.ts";
-import { make_liturgical_year_context } from "../dates/index.ts";
+import { make_liturgical_year_context } from "../seasons/index.ts";
 import Festivals from "../festivals/index.ts";
+import { epiphany_date } from "../festivals/epiphany.ts";
+import { n_sundays_after } from "../sunday.ts";
+import { ash_wednesday_date } from "../festivals/lent.ts";
+
+export const aca_seasons = (year: number): LiturgicalSeason[] => {
+    const seasons: LiturgicalSeason[] = [];
+    const ctxt = make_liturgical_year_context(year);
+
+    seasons.push({
+        name: "Advent",
+        start_date: ctxt.advent,
+        end_date: in_liturgical_year(ctxt, 12, 24)!,
+        colour: FestivalAttributes.COLOUR_VIOLET_OR_BLUE,
+    });
+
+    seasons.push({
+        name: "Christmas",
+        start_date: in_liturgical_year(ctxt, 12, 25)!,
+        end_date: epiphany_date(ctxt).add({ days: -1 }),
+        colour: FestivalAttributes.COLOUR_WHITE,
+    });
+
+    const epiphany = epiphany_date(ctxt);
+    const sunday_after_epiphany = n_sundays_after(epiphany, 1);
+
+    seasons.push({
+        name: "Epiphany",
+        start_date: epiphany,
+        end_date: sunday_after_epiphany.add({ days: -1 }),
+        colour: FestivalAttributes.COLOUR_WHITE,
+    });
+
+    seasons.push({
+        name: "Season after Epiphany",
+        start_date: sunday_after_epiphany,
+        end_date: ash_wednesday_date(ctxt).add({ days: -1 }),
+        colour: FestivalAttributes.COLOUR_GREEN,
+    });
+
+    seasons.push({
+        name: "Lent",
+        start_date: ash_wednesday_date(ctxt),
+        end_date: ctxt.easter.add({ days: -1 }),
+        colour: FestivalAttributes.COLOUR_VIOLET,
+    });
+
+    seasons.push({
+        name: "Easter",
+        start_date: ctxt.easter,
+        end_date: ctxt.pentecost.add({ days: -1 }),
+        colour: FestivalAttributes.COLOUR_WHITE,
+    });
+
+    seasons.push({
+        name: "Season after Pentecost",
+        start_date: ctxt.pentecost.add({ days: 1 }),
+        end_date: ctxt.last_day,
+        colour: FestivalAttributes.COLOUR_GREEN,
+    });
+
+    return seasons;
+};
 
 export const calendar = (year: number): [LiturgicalYearContext, ResolvedCalendar] => {
     const denom = Denomination.ANG_AU;
