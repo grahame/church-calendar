@@ -1,7 +1,7 @@
 import {
     Denomination,
     Festival,
-    FestivalAttributes,
+    LiturgicalColour,
     LiturgicalYearContext,
     ObservationLevel,
     in_liturgical_year,
@@ -25,7 +25,6 @@ const sundays_after_epiphany = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
-                    attributes: [],
                     level: ObservationLevel.LESSER_FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const epiphany = epiphany_date(ctxt);
@@ -46,7 +45,6 @@ const sundays_after_epiphany = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
-                    attributes: [],
                     level: ObservationLevel.LESSER_FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const epiphany = epiphany_date(ctxt);
@@ -73,7 +71,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [FestivalAttributes.COLOUR_WHITE],
+                colour: LiturgicalColour.COLOUR_WHITE,
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     const epiphany = epiphany_date(ctxt);
@@ -89,7 +87,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [FestivalAttributes.COLOUR_WHITE],
+                colour: LiturgicalColour.COLOUR_WHITE,
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     const epiphany = epiphany_date(ctxt);

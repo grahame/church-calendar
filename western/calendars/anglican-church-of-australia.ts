@@ -1,6 +1,6 @@
 import {
     Denomination,
-    FestivalAttributes,
+    LiturgicalColour,
     LiturgicalSeason,
     LiturgicalYearContext,
     ObservationLevel,
@@ -23,14 +23,14 @@ export const aca_seasons = (year: number): LiturgicalSeason[] => {
         name: "Advent",
         start_date: ctxt.advent,
         end_date: in_liturgical_year(ctxt, 12, 24)!,
-        colour: FestivalAttributes.COLOUR_VIOLET_OR_BLUE,
+        colour: LiturgicalColour.COLOUR_VIOLET_OR_BLUE,
     });
 
     seasons.push({
         name: "Christmas",
         start_date: in_liturgical_year(ctxt, 12, 25)!,
         end_date: epiphany_date(ctxt).add({ days: -1 }),
-        colour: FestivalAttributes.COLOUR_WHITE,
+        colour: LiturgicalColour.COLOUR_WHITE,
     });
 
     const epiphany = epiphany_date(ctxt);
@@ -40,35 +40,35 @@ export const aca_seasons = (year: number): LiturgicalSeason[] => {
         name: "Epiphany",
         start_date: epiphany,
         end_date: sunday_after_epiphany.add({ days: -1 }),
-        colour: FestivalAttributes.COLOUR_WHITE,
+        colour: LiturgicalColour.COLOUR_WHITE,
     });
 
     seasons.push({
         name: "Season after Epiphany",
         start_date: sunday_after_epiphany,
         end_date: ash_wednesday_date(ctxt).add({ days: -1 }),
-        colour: FestivalAttributes.COLOUR_GREEN,
+        colour: LiturgicalColour.COLOUR_GREEN,
     });
 
     seasons.push({
         name: "Lent",
         start_date: ash_wednesday_date(ctxt),
         end_date: ctxt.easter.add({ days: -1 }),
-        colour: FestivalAttributes.COLOUR_VIOLET,
+        colour: LiturgicalColour.COLOUR_VIOLET,
     });
 
     seasons.push({
         name: "Easter",
         start_date: ctxt.easter,
         end_date: ctxt.pentecost.add({ days: -1 }),
-        colour: FestivalAttributes.COLOUR_WHITE,
+        colour: LiturgicalColour.COLOUR_WHITE,
     });
 
     seasons.push({
         name: "Season after Pentecost",
         start_date: ctxt.pentecost.add({ days: 1 }),
         end_date: ctxt.last_day,
-        colour: FestivalAttributes.COLOUR_GREEN,
+        colour: LiturgicalColour.COLOUR_GREEN,
     });
 
     return seasons;

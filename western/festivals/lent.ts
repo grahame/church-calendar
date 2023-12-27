@@ -13,7 +13,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ash_wednesday_date(ctxt)];
@@ -28,7 +27,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_before(ctxt.easter, 6)];
@@ -42,7 +40,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_before(ctxt.easter, 5)];
@@ -56,7 +53,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_before(ctxt.easter, 4)];
@@ -71,7 +67,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_before(ctxt.easter, 3)];
@@ -86,7 +81,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_before(ctxt.easter, 2)];

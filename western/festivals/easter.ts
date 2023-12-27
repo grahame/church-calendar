@@ -1,4 +1,4 @@
-import { Denomination, Festival, FestivalAttributes, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
+import { Denomination, Festival, LiturgicalColour, LiturgicalYearContext, ObservationLevel } from "../../calendar.ts";
 import { n_sundays_after } from "../sunday.ts";
 
 const Festivals: Festival[] = [
@@ -9,7 +9,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter];
@@ -24,7 +23,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: 1 })];
@@ -39,7 +37,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: 2 })];
@@ -53,7 +50,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: 3 })];
@@ -67,7 +63,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: 4 })];
@@ -82,7 +77,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: 5 })];
@@ -97,7 +91,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: 6 })];
@@ -112,7 +105,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_after(ctxt.easter, 1)];
@@ -127,7 +119,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_after(ctxt.easter, 2)];
@@ -142,7 +133,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_after(ctxt.easter, 3)];
@@ -157,7 +147,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_after(ctxt.easter, 4)];
@@ -171,7 +160,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_after(ctxt.easter, 5)];
@@ -186,7 +174,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [FestivalAttributes.COLOUR_WHITE],
+                colour: LiturgicalColour.COLOUR_WHITE,
                 level: ObservationLevel.PRINCIPAL,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.easter.add({ days: 39 })];
@@ -200,7 +188,6 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
-                attributes: [],
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [n_sundays_after(ctxt.easter, 6)];
