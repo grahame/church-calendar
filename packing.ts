@@ -79,6 +79,7 @@ export const resolve_observances = (index: PackingIndex, ctxt: LiturgicalYearCon
                     level: either.observance.level,
                     slug: either.festival.slug,
                     name: either.observance.name || either.festival.name,
+                    colour: either.observance.colour,
                     description: either.festival.description,
                     image_link: either.festival.image_link,
                     wikipedia_article_titles: either.festival.wikipedia_article_titles,

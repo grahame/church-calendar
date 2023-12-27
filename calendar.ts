@@ -76,6 +76,7 @@ export type Festival = FestivalAttrs & {
 };
 
 export type ResolvedObservance = {
+    colour?: LiturgicalColour;
     level: ObservationLevel;
 } & FestivalAttrs;
 
