@@ -66,6 +66,8 @@ export type FestivalAttrs = {
     description?: string;
     image_link?: string;
     wikipedia_article_titles?: string[];
+    lesser_feasts_and_fasts?: string;
+    enhancing_holiness?: string;
 };
 
 // The definition of a festival within the Calendar of the Church

@@ -7,6 +7,7 @@ const Festivals: Festival[] = [
         slug: "all-saints-day",
         name: "All Saints' Day",
         wikipedia_article_titles: ["All Saints' Day"],
+        enhancing_holiness: "m11/d01.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -23,6 +24,7 @@ const Festivals: Festival[] = [
         slug: "the-naming-and-circumcision-of-jesus",
         name: "The Naming and Circumcision of Jesus",
         wikipedia_article_titles: ["Circumcision of Jesus"],
+        enhancing_holiness: "m01/d01.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -38,6 +40,7 @@ const Festivals: Festival[] = [
         slug: "the-presentation-of-christ-in-the-temple",
         name: "The Presentation of Christ in the Temple",
         wikipedia_article_titles: ["Presentation of Jesus at the Temple"],
+        enhancing_holiness: "m02/d02.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -53,6 +56,7 @@ const Festivals: Festival[] = [
         slug: "matthias-the-apostle",
         name: "Matthias the Apostle",
         wikipedia_article_titles: ["Saint Matthias"],
+        enhancing_holiness: "m05/d14.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -68,6 +72,7 @@ const Festivals: Festival[] = [
         slug: "saint-joseph",
         name: "Saint Joseph",
         wikipedia_article_titles: ["Saint Joseph"],
+        enhancing_holiness: "m03/d19.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -83,6 +88,7 @@ const Festivals: Festival[] = [
         slug: "the-annunciation-of-our-lord-to-the-blessed-virgin-mary",
         name: "The Annunciation of Our Lord to the Blessed Virgin Mary",
         wikipedia_article_titles: ["Annunciation"],
+        enhancing_holiness: "m03/d25.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -99,6 +105,7 @@ const Festivals: Festival[] = [
         slug: "mark-the-evangelist",
         name: "Mark (evangelist and martyr)",
         wikipedia_article_titles: ["Mark the Evangelist"],
+        enhancing_holiness: "m04/d25.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -114,6 +121,7 @@ const Festivals: Festival[] = [
         slug: "philip-and-james-apostles",
         name: "Philip and James (apostles and martyrs)",
         wikipedia_article_titles: ["Philip the Apostle"],
+        enhancing_holiness: "m05/d01.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -129,6 +137,7 @@ const Festivals: Festival[] = [
         slug: "barnabas-the-apostle",
         name: "Barnabas (apostle and martyr)",
         wikipedia_article_titles: ["Barnabas"],
+        enhancing_holiness: "m06/d11.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -144,6 +153,7 @@ const Festivals: Festival[] = [
         slug: "the-birth-of-john-the-baptist",
         name: "The Birth of John the Baptist",
         wikipedia_article_titles: ["Nativity of Saint John the Baptist"],
+        enhancing_holiness: "m06/d24.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -159,6 +169,7 @@ const Festivals: Festival[] = [
         slug: "peter-and-paul-apostles",
         name: "Peter and Paul (apostles and martyrs)",
         wikipedia_article_titles: ["Feast_of_Saints_Peter_and_Paul"],
+        enhancing_holiness: "m06/d29.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -174,6 +185,7 @@ const Festivals: Festival[] = [
         slug: "mary-magdalene",
         name: "Mary Magdalene",
         wikipedia_article_titles: ["Mary Magdalene"],
+        enhancing_holiness: "m07/d22.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -189,6 +201,7 @@ const Festivals: Festival[] = [
         slug: "james-apostle",
         name: "James (apostle and martyr)",
         wikipedia_article_titles: ["James, son of Zebedee"],
+        enhancing_holiness: "m07/d25.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -204,6 +217,7 @@ const Festivals: Festival[] = [
         slug: "transfiguration",
         name: "The Transfiguration of our Lord",
         wikipedia_article_titles: ["Transfiguration_of_Jesus"],
+        enhancing_holiness: "m08/d06.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -219,6 +233,7 @@ const Festivals: Festival[] = [
         slug: "mary-mother-of-our-lord",
         name: "Mary, Mother of our Lord",
         wikipedia_article_titles: ["Mary, mother of Jesus"],
+        enhancing_holiness: "m08/d15.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -234,6 +249,7 @@ const Festivals: Festival[] = [
         slug: "bartholomew-the-apostle",
         name: "Bartholomew (apostle and martyr)",
         wikipedia_article_titles: ["Bartholomew the Apostle"],
+        enhancing_holiness: "m08/d24.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -249,6 +265,7 @@ const Festivals: Festival[] = [
         slug: "matthew-apostle-and-evangelist",
         name: "Matthew (apostle, evangelist and martyr)",
         wikipedia_article_titles: ["Matthew the Apostle"],
+        enhancing_holiness: "m09/d21.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -264,6 +281,7 @@ const Festivals: Festival[] = [
         slug: "michael-and-all-angels",
         name: "Michael and All Angels",
         wikipedia_article_titles: ["Michaelmas"],
+        enhancing_holiness: "m09/d29.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -279,6 +297,7 @@ const Festivals: Festival[] = [
         slug: "luke-the-evangelist",
         name: "Luke (evangelist and martyr)",
         wikipedia_article_titles: ["Luke the Evangelist"],
+        enhancing_holiness: "m10/d18.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -294,6 +313,7 @@ const Festivals: Festival[] = [
         slug: "simon-and-jude-apostles",
         name: "Simon and Jude (apostles and martyrs)",
         wikipedia_article_titles: ["Saints Simon and Jude"],
+        enhancing_holiness: "m10/d28.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -309,6 +329,7 @@ const Festivals: Festival[] = [
         slug: "andrew-the-apostle",
         name: "Andrew (apostle and martyr)",
         wikipedia_article_titles: ["Andrew the Apostle"],
+        enhancing_holiness: "m11/d30.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -324,6 +345,7 @@ const Festivals: Festival[] = [
         slug: "thomas-the-apostle",
         name: "Thomas (apostle and martyr)",
         wikipedia_article_titles: ["Thomas the Apostle"],
+        enhancing_holiness: "m07/d03.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -339,6 +361,7 @@ const Festivals: Festival[] = [
         slug: "stephen-the-martyr",
         name: "Stephen (deacon and martyr)",
         wikipedia_article_titles: ["Saint Stephen"],
+        enhancing_holiness: "m12/d26.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -354,6 +377,7 @@ const Festivals: Festival[] = [
         slug: "john-apostle-and-evangelist",
         name: "John (apostle and evangelist)",
         wikipedia_article_titles: ["John the Apostle"],
+        enhancing_holiness: "m12/d27.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -369,6 +393,7 @@ const Festivals: Festival[] = [
         slug: "holy-innocents",
         name: "Holy Innocents",
         wikipedia_article_titles: ["Massacre of the Innocents"],
+        enhancing_holiness: "m12/d28.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
