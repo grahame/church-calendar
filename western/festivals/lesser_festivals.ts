@@ -44,6 +44,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Basil of Caesarea and Gregory of Nazianzus",
         wikipedia_article_titles: ["Basil of Caesarea", "Gregory of Nazianzus"],
+        exciting_holiness: "m01/d02a.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jun/Basil.html",
         month: 1,
         day: 2,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -58,6 +60,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "William Laud",
         wikipedia_article_titles: ["William Laud"],
+        exciting_holiness: "m01/d10.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/Laud.html",
         month: 1,
         day: 10,
         colour: LiturgicalColour.COLOUR_RED,
@@ -65,6 +69,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Hilary of Poitiers",
         wikipedia_article_titles: ["Hilary_of_Poitiers"],
+        exciting_holiness: "m01/d13a.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/Hilary.html",
         month: 1,
         day: 13,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -79,6 +85,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Antony of Egypt, abbot",
         wikipedia_article_titles: ["Antony_of_Egypt"],
+        exciting_holiness: "m01/d17a.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/Antony.html",
         month: 1,
         day: 17,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -93,6 +101,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Agnes, martyr",
         wikipedia_article_titles: ["Agnes_of_Rome"],
+        exciting_holiness: "m01/d21.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/Agnes.html",
         month: 1,
         day: 21,
         colour: LiturgicalColour.COLOUR_RED,
@@ -100,12 +110,16 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Vincent, deacon and martyr",
         wikipedia_article_titles: ["Vincent_of_Saragossa"],
+        exciting_holiness: "m01/d22.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/Vincent.html",
         month: 1,
         day: 22,
         colour: LiturgicalColour.COLOUR_RED,
     }),
     quick_anglican_lesser({
         name: "Companions of Paul, including Timothy, Titus and Silas",
+        exciting_holiness: "m01/d26.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/TimTitus.html",
         month: 1,
         day: 22,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -113,6 +127,7 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Conversion of Paul the apostle",
         wikipedia_article_titles: ["Conversion_of_Paul_the_Apostle"],
+        exciting_holiness: "m01/d25.html",
         month: 1,
         day: 25,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -127,6 +142,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "John Chrysostom, bishop and teacher",
         wikipedia_article_titles: ["John_Chrysostom"],
+        exciting_holiness: "m09/d13.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/Chrysostom2.html",
         month: 1,
         day: 27,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -134,6 +151,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Thomas Aquinas, theologian",
         wikipedia_article_titles: ["Thomas_Aquinas"],
+        exciting_holiness: "m01/d28.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/Aquinas.html",
         month: 1,
         day: 28,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -141,6 +160,7 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Charles, King of England",
         wikipedia_article_titles: ["Charles_I_of_England"],
+        exciting_holiness: "m01/d30.html",
         month: 1,
         day: 30,
         colour: LiturgicalColour.COLOUR_RED,
@@ -155,6 +175,7 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Anscar, missionary to Sweden",
         wikipedia_article_titles: ["Ansgar"],
+        exciting_holiness: "m02/d03.html",
         month: 2,
         day: 4,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -162,6 +183,7 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Martyrs of Japan",
         wikipedia_article_titles: ["Twenty-six_Martyrs_of_Japan"],
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Feb/Martyrs.html",
         month: 2,
         day: 5,
         colour: LiturgicalColour.COLOUR_RED,
@@ -169,6 +191,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Cyril and Methodius, missionaries to the Slavs",
         wikipedia_article_titles: ["Cyril_and_Methodius"],
+        exciting_holiness: "m02/d14a.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Feb/Cyril.html",
         month: 2,
         day: 14,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -191,6 +215,8 @@ const Festivals: Festival[] = [
         slug: "matthias-apostle-and-martyr",
         name: "Matthias, apostle and martyr",
         wikipedia_article_titles: ["Polycarp"],
+        exciting_holiness: "m02/d23.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Feb/Polycarp.html",
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
@@ -205,6 +231,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "George Herbert, priest and poet",
         wikipedia_article_titles: ["George_Herbert"],
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Feb/Herbert.html",
+        exciting_holiness: "m02/d27.html",
         month: 2,
         day: 27,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -212,6 +240,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "David, bishop of Wales and martyr",
         wikipedia_article_titles: ["David_of_Wales"],
+        exciting_holiness: "m03/d01.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/David.html",
         month: 3,
         day: 1,
         colour: LiturgicalColour.COLOUR_RED,
@@ -219,6 +249,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Chad, bishop of Lichfield and missionary",
         wikipedia_article_titles: ["Chad_of_Mercia"],
+        exciting_holiness: "m03/d02.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/Chad.html",
         month: 3,
         day: 2,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -226,6 +258,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Perpetua and her companions, martyrs",
         wikipedia_article_titles: ["Perpetua_and_Felicity"],
+        exciting_holiness: "m03/d07.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/Perpetua.html",
         month: 3,
         day: 7,
         colour: LiturgicalColour.COLOUR_RED,
@@ -247,6 +281,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Patrick, bishop and missionary",
         wikipedia_article_titles: ["Saint_Patrick"],
+        exciting_holiness: "m03/d17.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/Patrick.html",
         month: 3,
         day: 17,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -254,6 +290,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Cyril of Jerusalem, bishop and teacher",
         wikipedia_article_titles: ["Cyril_of_Jerusalem"],
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/Cyril.html",
+        exciting_holiness: "m03/d18.html",
         month: 3,
         day: 18,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -261,6 +299,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Cuthbert, bishop and missionary",
         wikipedia_article_titles: ["Cuthbert_of_Lindisfarne"],
+        exciting_holiness: "m03/d20.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/CuthbertNew.html",
         month: 3,
         day: 20,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -268,6 +308,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Thomas Cranmer, archbishop of Canterbury, martyr and liturgist",
         wikipedia_article_titles: ["Thomas_Cranmer"],
+        exciting_holiness: "m03/d21.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Oct/Latimer.html",
         month: 3,
         day: 21,
         colour: LiturgicalColour.COLOUR_RED,
@@ -275,6 +317,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Thomas Ken, bishop of Bath and Wells, teacher",
         wikipedia_article_titles: ["Thomas_Ken"],
+        exciting_holiness: "m06/d08.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/Ken.html",
         month: 3,
         day: 21,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -282,6 +326,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Oscar Romero, archbishop of San Salvador",
         wikipedia_article_titles: ["Óscar_Romero"],
+        exciting_holiness: "m03/d24b.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/Romero.html",
         month: 3,
         day: 24,
         colour: LiturgicalColour.COLOUR_RED,
@@ -296,6 +342,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "John Keble, priest",
         wikipedia_article_titles: ["John_Keble"],
+        exciting_holiness: "m07/d14.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Mar/Keble.html",
         month: 3,
         day: 29,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -303,6 +351,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Richard of Chichester, bishop",
         wikipedia_article_titles: ["Richard_of_Chichester"],
+        exciting_holiness: "m06/d16a.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Apr/Richard.html",
         month: 4,
         day: 3,
         colour: LiturgicalColour.COLOUR_WHITE,
@@ -324,12 +374,16 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "William Law, priest and teacher",
         wikipedia_article_titles: ["William_Law"],
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Apr/Law.html",
+        exciting_holiness: "m04/d10a.html",
         month: 4,
         day: 9,
         colour: LiturgicalColour.COLOUR_WHITE,
     }),
     quick_anglican_lesser({
         name: "Dietrich Bonhoeffer, pastor and martyr",
+        exciting_holiness: "m04/d09.html",
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Apr/Bonhoeff.html",
         wikipedia_article_titles: ["Dietrich_Bonhoeffer"],
         month: 4,
         day: 9,
@@ -338,6 +392,8 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "George Augustus Selwyn, first missionary bishop of New Zealand",
         wikipedia_article_titles: ["George_Selwyn_(bishop_of_Lichfield)"],
+        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Apr/Selwyn.html",
+        exciting_holiness: "m04/d11.html",
         month: 4,
         day: 11,
         colour: LiturgicalColour.COLOUR_WHITE,
