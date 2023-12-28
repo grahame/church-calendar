@@ -5,6 +5,8 @@ import { n_sundays_after, n_sundays_before } from "../sunday.ts";
 export type QuickFixedAnglican = {
     name: string;
     wikipedia_article_titles?: string[];
+    exciting_holiness?: string;
+    lesser_feasts_and_fasts?: string;
     month: number;
     day: number;
     colour?: LiturgicalColour;
@@ -23,6 +25,8 @@ const quick_anglican_lesser = (obs: QuickFixedAnglican): Festival => {
         slug: make_slug(obs.name),
         name: obs.name,
         wikipedia_article_titles: obs.wikipedia_article_titles,
+        exciting_holiness: obs.exciting_holiness,
+        lesser_feasts_and_fasts: obs.lesser_feasts_and_fasts,
         calendar_observances: [
             {
                 denominations: [Denomination.ANG_AU],
