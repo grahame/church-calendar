@@ -83,6 +83,8 @@ export const resolve_observances = (index: PackingIndex, ctxt: LiturgicalYearCon
                     description: either.festival.description,
                     image_link: either.festival.image_link,
                     wikipedia_article_titles: either.festival.wikipedia_article_titles,
+                    lesser_feasts_and_fasts: either.festival.lesser_feasts_and_fasts,
+                    exciting_holiness: either.festival.exciting_holiness,
                 };
             }),
         ]);
