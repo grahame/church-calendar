@@ -5,6 +5,7 @@ import {
     ResolvedCalendar,
     date_within_liturgical_year,
 } from "./calendar.ts";
+import { assert } from "./npm/esm/deps/deno.land/std@0.203.0/assert/assert.js";
 import { Temporal } from "./temporal.ts";
 
 export type PackingIndex = { [key: string]: EitherObservanceFestival[] };
@@ -61,6 +62,13 @@ export const pack_observance = (
 };
 
 export const resolve_observances = (index: PackingIndex, ctxt: LiturgicalYearContext): ResolvedCalendar => {
+    const complete_eh_link = (eh_link: string | undefined) => {
+        if (!eh_link) {
+            return undefined;
+        }
+        assert(eh_link.startsWith("m"));
+        return "https://www.excitingholiness.org/first-edition/" + eh_link;
+    };
     const events: ResolvedCalendar = [];
     const keys = Object.keys(index).sort();
     for (const dt_key of keys) {
@@ -84,7 +92,7 @@ export const resolve_observances = (index: PackingIndex, ctxt: LiturgicalYearCon
                     image_link: either.festival.image_link,
                     wikipedia_article_titles: either.festival.wikipedia_article_titles,
                     lesser_feasts_and_fasts: either.festival.lesser_feasts_and_fasts,
-                    exciting_holiness: either.festival.exciting_holiness,
+                    exciting_holiness: complete_eh_link(either.festival.exciting_holiness),
                 };
             }),
         ]);

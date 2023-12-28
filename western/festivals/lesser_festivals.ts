@@ -1104,7 +1104,7 @@ const Festivals: Festival[] = [
     quick_anglican_lesser({
         name: "Clement of Rome, bishop and martyr",
         wikipedia_article_titles: ["Pope_Clement_I"],
-        exciting_holiness: "https://www.excitingholiness.org/first-edition/index.cgi?m11/d23.html",
+        exciting_holiness: "m11/d23.html",
         lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Nov/Clement.html",
         month: 11,
         day: 23,
