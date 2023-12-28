@@ -5,7 +5,6 @@ import {
     ResolvedCalendar,
     date_within_liturgical_year,
 } from "./calendar.ts";
-import { assert } from "./npm/esm/deps/deno.land/std@0.203.0/assert/assert.js";
 import { Temporal } from "./temporal.ts";
 
 export type PackingIndex = { [key: string]: EitherObservanceFestival[] };
@@ -66,7 +65,6 @@ export const resolve_observances = (index: PackingIndex, ctxt: LiturgicalYearCon
         if (!eh_link) {
             return undefined;
         }
-        assert(eh_link.startsWith("m"));
         return "https://www.excitingholiness.org/first-edition/" + eh_link;
     };
     const events: ResolvedCalendar = [];
