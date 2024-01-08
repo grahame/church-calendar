@@ -12,7 +12,7 @@ const sundays_after_pentecost = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
-                    level: ObservationLevel.LESSER_FESTIVAL,
+                    level: ObservationLevel.FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const dt = ctxt.pentecost.add({ days: 7 * sunday_after });
                         // the last Sunday is a special-case

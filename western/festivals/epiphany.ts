@@ -25,7 +25,7 @@ const sundays_after_epiphany = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
-                    level: ObservationLevel.LESSER_FESTIVAL,
+                    level: ObservationLevel.FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const epiphany = epiphany_date(ctxt);
                         const lent_1 = n_sundays_before(ctxt.easter, 6);
@@ -45,7 +45,7 @@ const sundays_after_epiphany = () => {
             observances: [
                 {
                     denominations: [Denomination.ANG_AU],
-                    level: ObservationLevel.LESSER_FESTIVAL,
+                    level: ObservationLevel.FESTIVAL,
                     dates: (ctxt: LiturgicalYearContext) => {
                         const epiphany = epiphany_date(ctxt);
                         const lent_1 = n_sundays_before(ctxt.easter, 6);
