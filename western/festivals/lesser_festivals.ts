@@ -121,7 +121,7 @@ const Festivals: Festival[] = [
         exciting_holiness: "m01/d26.html",
         lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Jan/TimTitus.html",
         month: 1,
-        day: 22,
+        day: 24,
         colour: LiturgicalColour.COLOUR_WHITE,
     }),
     quick_anglican_lesser({
