@@ -23,7 +23,7 @@ export const ember_days = (context: LiturgicalYearContext): Temporal.PlainDate[]
     const days: Temporal.PlainDate[] = [];
     const pentecostDate = context.pentecost;
     const emberStart = pentecostDate.add({ days: 1 });
-    const emberEnd = pentecostDate.add({ days: 5 });
+    const emberEnd = pentecostDate.add({ days: 6 });
     for (let dt = emberStart; Temporal.PlainDate.compare(dt, emberEnd) <= 0; dt = dt.add({ days: 1 })) {
         days.push(dt);
     }
