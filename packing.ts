@@ -2,7 +2,7 @@ import {
     EitherObservanceFestival,
     LiturgicalYearContext,
     ObservanceFestivalList,
-    ResolvedCalendar,
+    DateObservances,
     date_within_liturgical_year,
 } from "./calendar.ts";
 import { Temporal } from "./temporal.ts";
@@ -60,14 +60,14 @@ export const pack_observance = (
     }
 };
 
-export const resolve_observances = (index: PackingIndex, ctxt: LiturgicalYearContext): ResolvedCalendar => {
+export const resolve_observances = (index: PackingIndex, ctxt: LiturgicalYearContext): DateObservances => {
     const complete_eh_link = (eh_link: string | undefined) => {
         if (!eh_link) {
             return undefined;
         }
         return "https://www.excitingholiness.org/first-edition/" + eh_link;
     };
-    const events: ResolvedCalendar = [];
+    const events: DateObservances = [];
     const keys = Object.keys(index).sort();
     for (const dt_key of keys) {
         if (!index[dt_key]) {

@@ -107,7 +107,15 @@ export const in_liturgical_year = (ctxt: LiturgicalYearContext, month: number, d
     }
 };
 
-export type ResolvedCalendar = [Temporal.PlainDate, ResolvedObservance[]][];
+export type DateAttributeSlug = "ember-day" | "week-of-prayer-for-christian-unity";
+export type DateAttributes = [Temporal.PlainDate, DateAttributeSlug[]][];
+export type DateObservances = [Temporal.PlainDate, ResolvedObservance[]][];
+
+export type Calendar = {
+    context: LiturgicalYearContext;
+    observances: DateObservances;
+    attributes: DateAttributes;
+};
 
 export type CalendarObservanceFestival = {
     type: "calendar";

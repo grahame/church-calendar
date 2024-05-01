@@ -1,10 +1,10 @@
 import {
+    Calendar,
     Denomination,
     LiturgicalColour,
     LiturgicalSeason,
     LiturgicalYearContext,
     ObservationLevel,
-    ResolvedCalendar,
     in_liturgical_year,
 } from "../../calendar.ts";
 import { PackingIndex, pack_observances, resolve_observances } from "../../packing.ts";
@@ -74,7 +74,7 @@ export const aca_seasons = (year: number): LiturgicalSeason[] => {
     return seasons;
 };
 
-export const calendar = (year: number): [LiturgicalYearContext, ResolvedCalendar] => {
+export const calendar = (year: number): Calendar => {
     const denom = Denomination.ANG_AU;
     const index: PackingIndex = {};
     const festival_index = make_festival_index(Festivals);
@@ -116,12 +116,16 @@ export const calendar = (year: number): [LiturgicalYearContext, ResolvedCalendar
     //
     // Further, in 1997 the Feast of Saint Andrew doesn't occur at all, because that liturgical
     // year begins on the 1st of December and ends on the 29th of November.
-    const ctxts = [make_liturgical_year_context(year - 1), make_liturgical_year_context(year)];
-    pack_principal_years(ctxts);
-    pack_festival_year(ctxts);
-    pack_lesser_festival_year(ctxts);
+    const contexts = [make_liturgical_year_context(year - 1), make_liturgical_year_context(year)];
+    pack_principal_years(contexts);
+    pack_festival_year(contexts);
+    pack_lesser_festival_year(contexts);
 
-    // linearise the placed dictionary into a list
-    const ctxt = ctxts[1];
-    return [ctxt, resolve_observances(index, ctxt)];
+    const context = contexts[1];
+    return {
+        // we can throw away the context for the prior year
+        context: context,
+        observances: resolve_observances(index, context),
+        attributes: [],
+    };
 };
