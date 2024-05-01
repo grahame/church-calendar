@@ -1,19 +1,45 @@
 import {
     Calendar,
+    DateAttributes,
     Denomination,
     LiturgicalColour,
     LiturgicalSeason,
     LiturgicalYearContext,
     ObservationLevel,
+    in_calendar_year,
     in_liturgical_year,
 } from "../../calendar.ts";
-import { PackingIndex, pack_observances, resolve_observances } from "../../packing.ts";
 import { make_festival_index } from "../../festivalindex.ts";
-import { make_liturgical_year_context } from "../seasons/index.ts";
-import Festivals from "../festivals/index.ts";
+import { PackingIndex, pack_observances, resolve_observances } from "../../packing.ts";
+import { Temporal } from "../../temporal.ts";
 import { epiphany_date } from "../festivals/epiphany.ts";
-import { n_sundays_after } from "../sunday.ts";
+import Festivals from "../festivals/index.ts";
 import { ash_wednesday_date } from "../festivals/lent.ts";
+import { make_liturgical_year_context } from "../seasons/index.ts";
+import { n_sundays_after } from "../sunday.ts";
+
+export const ember_days = (context: LiturgicalYearContext): Temporal.PlainDate[] => {
+    // APBA p.450: Prayers are offered on the weekdays following the day of Pentecost
+    const days: Temporal.PlainDate[] = [];
+    const pentecostDate = context.pentecost;
+    const emberStart = pentecostDate.add({ days: 1 });
+    const emberEnd = pentecostDate.add({ days: 5 });
+    for (let dt = emberStart; Temporal.PlainDate.compare(dt, emberEnd) <= 0; dt = dt.add({ days: 1 })) {
+        days.push(dt);
+    }
+    // ... and the week preceding St Andrew’s Day; this seems to mean an inclusive octave prior
+    // to the feast of Andrew, skipping any Sundays but including Saturdays
+    const andrewDate = in_calendar_year(context.last_day.year, 11, 30);
+    let dt = andrewDate.add({ days: -7 });
+    const until = andrewDate.add({ days: -1 });
+    while (Temporal.PlainDate.compare(dt, until) <= 0) {
+        if (dt.dayOfWeek !== 7) {
+            days.push(dt);
+        }
+        dt = dt.add({ days: 1 });
+    }
+    return days;
+};
 
 export const aca_seasons = (year: number): LiturgicalSeason[] => {
     const seasons: LiturgicalSeason[] = [];
@@ -74,6 +100,18 @@ export const aca_seasons = (year: number): LiturgicalSeason[] => {
     return seasons;
 };
 
+const resolve_attributes = (context: LiturgicalYearContext): DateAttributes => {
+    const embers = ember_days(context);
+    const date_attributes: DateAttributes = [];
+
+    // if we add more than one attribute type, this will need to be fixed up to merge them together
+    for (const dt of embers) {
+        date_attributes.push([dt, ["ember-day"]]);
+    }
+
+    return date_attributes;
+};
+
 export const calendar = (year: number): Calendar => {
     const denom = Denomination.ANG_AU;
     const index: PackingIndex = {};
@@ -122,10 +160,13 @@ export const calendar = (year: number): Calendar => {
     pack_lesser_festival_year(contexts);
 
     const context = contexts[1];
+    const observances = resolve_observances(index, context);
+    const attributes = resolve_attributes(context);
+
     return {
         // we can throw away the context for the prior year
-        context: context,
-        observances: resolve_observances(index, context),
-        attributes: [],
+        context,
+        observances,
+        attributes,
     };
 };

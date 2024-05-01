@@ -19,6 +19,10 @@ const main = () => {
         const slugs = obvs.map((o) => o.slug).join(", ");
         console.log(`  ${dt.toString()}: ${slugs}`);
     }
+    console.log("\nAttributes:");
+    for (const [dt, attributes] of calendar.attributes) {
+        console.log(`  ${dt.toString()}: ${attributes}`);
+    }
 };
 
 main();

@@ -107,6 +107,17 @@ export const in_liturgical_year = (ctxt: LiturgicalYearContext, month: number, d
     }
 };
 
+export const findObservanceDate = (placed_events: DateObservances, slug: string): Temporal.PlainDate | null => {
+    for (const [dt, obvs] of placed_events) {
+        for (const obv of obvs) {
+            if (obv.slug === slug) {
+                return dt;
+            }
+        }
+    }
+    return null;
+};
+
 export type DateAttributeSlug = "ember-day" | "week-of-prayer-for-christian-unity";
 export type DateAttributes = [Temporal.PlainDate, DateAttributeSlug[]][];
 export type DateObservances = [Temporal.PlainDate, ResolvedObservance[]][];
