@@ -1,3 +1,4 @@
+import { DateAttributeSlug } from "../../calendar.ts";
 import {
     Calendar,
     DateAttributes,
@@ -37,6 +38,19 @@ export const ember_days = (context: LiturgicalYearContext): Temporal.PlainDate[]
             days.push(dt);
         }
         dt = dt.add({ days: 1 });
+    }
+    return days;
+};
+
+export const week_of_prayer_for_christian_unity_days = (context: LiturgicalYearContext): Temporal.PlainDate[] => {
+    // this isn't in the APBA calendar (it post-dates it) but is acknowledged in the official lectionary
+    // it is observed on the weekdays over the week prior to Pentecost
+    const days: Temporal.PlainDate[] = [];
+    const pentecostDate = context.pentecost;
+    const cuStart = pentecostDate.add({ days: -6 });
+    const cuEnd = pentecostDate.add({ days: -1 });
+    for (let dt = cuStart; Temporal.PlainDate.compare(dt, cuEnd) <= 0; dt = dt.add({ days: 1 })) {
+        days.push(dt);
     }
     return days;
 };
@@ -101,14 +115,16 @@ export const aca_seasons = (year: number): LiturgicalSeason[] => {
 };
 
 const resolve_attributes = (context: LiturgicalYearContext): DateAttributes => {
-    const embers = ember_days(context);
     const date_attributes: DateAttributes = [];
 
-    // if we add more than one attribute type, this will need to be fixed up to merge them together
-    for (const dt of embers) {
+    // if we add overlapping attribute types, this will need to be fixed up to merge them together
+    for (const dt of ember_days(context)) {
         date_attributes.push([dt, ["ember-day"]]);
     }
-
+    for (const dt of week_of_prayer_for_christian_unity_days(context)) {
+        date_attributes.push([dt, ["week-of-prayer-for-christian-unity"]]);
+    }
+    date_attributes.sort(([a], [b]) => Temporal.PlainDate.compare(a, b));
     return date_attributes;
 };
 
