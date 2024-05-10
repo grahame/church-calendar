@@ -55,6 +55,18 @@ export const week_of_prayer_for_christian_unity_days = (context: LiturgicalYearC
     return days;
 };
 
+export const week_of_prayer_for_reconciliation = (context: LiturgicalYearContext): Temporal.PlainDate[] => {
+    // this isn't in the APBA calendar (it post-dates it) but is acknowledged in the official lectionary
+    // it is observed on the weekdays over the week prior to Pentecost
+    const days: Temporal.PlainDate[] = [];
+    const start = new Temporal.PlainDate(context.year, 5, 27);
+    const end = new Temporal.PlainDate(context.year, 6, 3);
+    for (let dt = start; Temporal.PlainDate.compare(dt, end) <= 0; dt = dt.add({ days: 1 })) {
+        days.push(dt);
+    }
+    return days;
+};
+
 export const aca_seasons = (year: number): LiturgicalSeason[] => {
     const seasons: LiturgicalSeason[] = [];
     const ctxt = make_liturgical_year_context(year);
@@ -117,15 +129,46 @@ export const aca_seasons = (year: number): LiturgicalSeason[] => {
 const resolve_attributes = (context: LiturgicalYearContext): DateAttributes => {
     const date_attributes: DateAttributes = [];
 
-    // if we add overlapping attribute types, this will need to be fixed up to merge them together
-    for (const dt of ember_days(context)) {
-        date_attributes.push([dt, ["ember-day"]]);
-    }
-    for (const dt of week_of_prayer_for_christian_unity_days(context)) {
-        date_attributes.push([dt, ["week-of-prayer-for-christian-unity"]]);
-    }
-    date_attributes.sort(([a], [b]) => Temporal.PlainDate.compare(a, b));
-    return date_attributes;
+    const push = (fn: (context: LiturgicalYearContext) => Temporal.PlainDate[], slug: DateAttributeSlug) => {
+        for (const dt of fn(context)) {
+            date_attributes.push([dt, [slug]]);
+        }
+    };
+
+    push(ember_days, "ember-day");
+    push(week_of_prayer_for_christian_unity_days, "week-of-prayer-for-christian-unity");
+    push(week_of_prayer_for_reconciliation, "week-of-prayer-for-reconciliation");
+
+    const merge_attributes = (attributes: DateAttributes): DateAttributes => {
+        const merged: DateAttributes = [];
+        attributes.sort();
+
+        const push_attrs = () => {
+            if (attrs.length > 0) {
+                merged.push([today, [...attrs]]);
+            }
+        };
+
+        if (attributes.length === 0) {
+            return [];
+        }
+
+        let today = attributes[0][0];
+        const attrs: DateAttributeSlug[] = [...attributes[0][1]];
+        for (const [dt, attr] of attributes.slice(1)) {
+            if (Temporal.PlainDate.compare(today, dt) !== 0) {
+                push_attrs();
+                today = dt;
+                attrs.length = 0;
+            }
+            attrs.push(...attr);
+        }
+        push_attrs();
+
+        return merged;
+    };
+
+    return merge_attributes(date_attributes);
 };
 
 export const calendar = (year: number): Calendar => {

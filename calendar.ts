@@ -118,7 +118,10 @@ export const findObservanceDate = (placed_events: DateObservances, slug: string)
     return null;
 };
 
-export type DateAttributeSlug = "ember-day" | "week-of-prayer-for-christian-unity";
+export type DateAttributeSlug =
+    | "ember-day"
+    | "week-of-prayer-for-christian-unity"
+    | "week-of-prayer-for-reconciliation";
 export type DateAttributes = [Temporal.PlainDate, DateAttributeSlug[]][];
 export type DateObservances = [Temporal.PlainDate, ResolvedObservance[]][];
 
