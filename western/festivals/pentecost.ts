@@ -59,6 +59,7 @@ const Festivals: Festival[] = [
         observances: [
             {
                 denominations: [Denomination.ANG_AU],
+                colour: LiturgicalColour.COLOUR_RED,
                 level: ObservationLevel.NON_DISPLACABLE,
                 dates: (ctxt: LiturgicalYearContext) => {
                     return [ctxt.pentecost];

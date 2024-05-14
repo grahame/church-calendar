@@ -211,23 +211,6 @@ const Festivals: Festival[] = [
         day: 23,
         colour: LiturgicalColour.COLOUR_RED,
     }),
-    {
-        slug: "matthias-apostle-and-martyr",
-        name: "Matthias, apostle and martyr",
-        wikipedia_article_titles: ["Polycarp"],
-        exciting_holiness: "m02/d23.html",
-        lesser_feasts_and_fasts: "https://www.lectionarypage.net/LesserFF/Feb/Polycarp.html",
-        calendar_observances: [
-            {
-                denominations: [Denomination.ANG_AU],
-                colour: LiturgicalColour.COLOUR_RED,
-                level: ObservationLevel.LESSER_FESTIVAL,
-                dates: (_ctxt, year: number) => {
-                    return [in_calendar_year(year, 2, 24), in_calendar_year(year, 5, 14)];
-                },
-            },
-        ],
-    },
     quick_anglican_lesser({
         name: "George Herbert, priest and poet",
         wikipedia_article_titles: ["George_Herbert"],
