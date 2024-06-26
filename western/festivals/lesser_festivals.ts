@@ -561,7 +561,7 @@ const Festivals: Festival[] = [
         exciting_holiness: "m06/d27.html",
         month: 6,
         day: 27,
-        colour: LiturgicalColour.COLOUR_RED,
+        colour: LiturgicalColour.COLOUR_WHITE,
     }),
     quick_anglican_lesser({
         name: "Irenaeus of Lyons, bishop and teacher",
