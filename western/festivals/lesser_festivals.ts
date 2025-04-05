@@ -344,7 +344,7 @@ const Festivals: Festival[] = [
         name: "Frederic Barker, bishop of Sydney and pioneer of theological education and the General Synod",
         wikipedia_article_titles: ["Frederic_Barker"],
         month: 4,
-        day: 4,
+        day: 6,
         colour: LiturgicalColour.COLOUR_WHITE,
     }),
     quick_anglican_lesser({
